@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPONA Intl. | About Us</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc; --bg-card: #ffffff; --border-color: #cbd5e1;
+            --text-primary: #0f172a; --text-secondary: #475569;
+            --accent-emerald: #059669; --accent-indigo: #4f46e5; --light-blue: #f0fdfa;
+            --accent-amber: #b45309; --light-amber: #fffbeb;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; }
+        nav { position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); padding: 15px 20px; z-index: 1000; backdrop-filter: blur(8px); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-indigo); text-decoration: none; }
+        .nav-right-block { display: flex; align-items: center; gap: 25px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
+        .nav-links a.active, .nav-links a:hover { color: var(--accent-indigo); }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .page-header { margin-bottom: 40px; }
+        .page-header h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        .page-header p { font-size: 1.1rem; color: var(--text-secondary); }
+        
+        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 35px; border-radius: 12px; margin-bottom: 30px; }
+        .card h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card p { color: var(--text-secondary); margin-bottom: 15px; }
+        .card p:last-child { margin-bottom: 0; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .grid-card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 25px; border-radius: 12px; }
+        .grid-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--accent-indigo); }
+        .grid-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        
+        .disclaimer-box { background-color: var(--light-amber); border: 1px solid rgba(180, 83, 9, 0.2); padding: 20px; border-radius: 8px; color: var(--accent-amber); font-size: 0.9rem; font-weight: 500; margin-top: 25px; }
+        .badge { font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; background-color: var(--light-blue); color: var(--accent-emerald); border: 1px solid rgba(5, 150, 105, 0.2); display: inline-block; margin-bottom: 15px; }
+        
+        ul.list-style { list-style: none; margin-top: 15px; }
+        ul.list-style li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-secondary); }
+        ul.list-style li::before { content: "•"; color: var(--accent-emerald); font-weight: bold; font-size: 1.5rem; position: absolute; left: 5px; top: -4px; }
+        
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPONA Intl.</a>
+            <div class="nav-right-block">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Who We Are Section -->
+        <section class="page-header">
+            <div class="card">
+                <h2>🌐 Who We Are</h2>
+                <p>SPONA Intl. (The Student-led Peer Outreach and Neuroscience Association) is a global, student-led academic network. We bridge the gap between youth peer collaboration and the cutting-edge world of brain science.</p>
+                <p>Run entirely by students, for students, our network empowers young minds to dive into neuroscience, conduct peer-led research, and connect with an international community of future scientists.</p>
+                <div class="disclaimer-box">
+                    <strong>Disclaimer:</strong> All content shared is strictly for informational and educational purposes and does not constitute professional medical advice, diagnosis, or treatment.
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="card">
+            <h2>🚀 Our Mission</h2>
+            <ul class="list-style">
+                <li><strong>Demystify the Brain:</strong> Making complex neuroscience and research accessible, engaging, and relevant to secondary school students worldwide.</li>
+                <li><strong>Global Peer Support:</strong> Providing an inclusive, online space where students can connect, share academic insights, and collaborate on scientific projects.</li>
+                <li><strong>Youth-Led Innovation:</strong> Demonstrating the power of independent student leadership in the global academic and scientific community.</li>
+            </ul>
+        </section>
+
+        <!-- Privacy Section -->
+        <section class="card" style="border-left: 4px solid var(--accent-emerald);">
+            <h2>🔒 Digital Security & Privacy Statement</h2>
+            <p>As an international organization built by students, digital trust is our highest priority. SPONA Intl. operates strictly as a zero-data platform.</p>
+            <ul class="list-style">
+                <li><strong>No Personal Tracking:</strong> We do not collect, track, or store any personal data, analytics, or registration information from our visitors.</li>
+                <li><strong>No Financial Details:</strong> Our platform is 100% non-commercial. We will never request financial details, payments, or donations.</li>
+                <li><strong>Safe Open Access:</strong> All educational articles, neuro-research toolkits, and peer resources are completely open and free to access safely from anywhere in the world.</li>
+            </ul>
+        </section>
+
+        <!-- Join Us & Grid Layout Section -->
+        <section class="card">
+            <h2>🧬 Join SPONA Intl.</h2>
+            <p>You do not need a university degree to start exploring the brain. Whether you want to write scientific articles, lead a global team, or simply learn alongside peers from around the world, there is a place for you at SPONA Intl.</p>
+            
+            <h2 style="font-size: 1.3rem; margin-top: 30px; margin-bottom: 5px;">🚀 Ways to Get Involved</h2>
+            <div class="grid-container">
+                <div class="grid-card">
+                    <h3>Become a Student Researcher</h3>
+                    <p>Collaborate with international peers to review scientific literature, analyze data, and publish youth-led neuroscience articles.</p>
+                </div>
+                <div class="grid-card">
+                    <h3>Join the Peer Support & Outreach</h3>
+                    <p>Help build our global community, moderate digital discussion spaces, and connect students interested in mental health and brain science.</p>
+                </div>
+                <div class="grid-card">
+                    <h3>Launch a Local Chapter</h3>
+                    <p>Bring SPONA Intl. to your secondary school. Act as a regional director, host study groups, and lead local science initiatives.</p>
+                </div>
+            </div>
+
+            <h2 style="font-size: 1.3rem; margin-top: 35px; margin-bottom: 5px;">📈 What You Gain</h2>
+            <div class="grid-container">
+                <div class="grid-card" style="border-top: 3px solid var(--accent-indigo);">
+                    <h3>Global Collaboration</h3>
+                    <p>Work directly with ambitious pre-med and science students from different countries.</p>
+                </div>
+                <div class="grid-card" style="border-top: 3px solid var(--accent-indigo);">
+                    <h3>Resume Booster</h3>
+                    <p>Stand out on university applications by leading independent scientific research projects consistently.</p>
+                </div>
+                <div class="grid-card" style="border-top: 3px solid var(--accent-indigo);">
+                    <h3>Leadership Roles</h3>
+                    <p>Gain real-world experience running an international digital organization.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
+    </div>
+
+    <!-- Google Translate Script Initialization -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() { 
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+                autoDisplay: false
+            }, 'google_translate_element'); 
+        }
+    </script>
