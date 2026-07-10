@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPONA Intl. | Events</title>
+    <style>
+        :root { var(--bg-main): #f8fafc; --bg-card: #ffffff; --border-color: #cbd5e1; --text-primary: #0f172a; --text-secondary: #475569; --accent-indigo: #4f46e5; --light-blue: #f0fdfa; --accent-emerald: #059669; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; }
+        nav { position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); padding: 15px 20px; z-index: 1000; backdrop-filter: blur(8px); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-indigo); text-decoration: none; }
+        .nav-right-block { display: flex; align-items: center; gap: 25px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
+        .nav-links a.active, .nav-links a:hover { color: var(--accent-indigo); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
+        p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.05rem; }
+        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; margin-bottom: 24px; }
+        .badge { font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; background-color: var(--light-blue); color: var(--accent-emerald); border: 1px solid rgba(5, 150, 105, 0.2); }
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPONA Intl.</a>
+            <div class="nav-right-block">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Events & Academic Schedule</h2>
+        <p>Track global onboarding cycles, open science symposia, and local secondary school study chapter timelines below.</p>
+        <div class="card" style="border-left: 4px solid var(--accent-indigo);">
+            <span class="badge" style="margin-bottom: 8px; display: inline-block;">Upcoming Event</span>
+            <h3>Global Youth Neuroscience Seminar 2026</h3>
+            <p><strong>Timeline Schedule:</strong> October 14, 2026 @ 15:00 UTC</p>
+            <p>An international digital assembly where core analysts and team branches share updates regarding current research modules.</p>
+        </div>
+        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element'); }
+    </script>
+    <script type="text/javascript" src="//://google.com"></script>
+</body>
+</html>
