@@ -77,25 +77,6 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const today = new Date();
-        const month = today.getMonth(); // 0 = Jan, 6 = Jul
-        
-        // Active months: 0 (Jan) and 6 (Jul)
-        const applicationMonths =;
-        const formSection = document.getElementById("dynamic-cohort-section");
-        
-        if (formSection) {
-            if (applicationMonths.includes(month)) {
-                formSection.style.display = "block"; // Show if it is Jan or Jul
-            } else {
-                formSection.style.display = "none";  // Hide during all other months
-            }
-        }
-    });
-    </script>
-
         <!-- Form Section with Detailed Programme Structure & Fixed Google Form Embed -->
 <div id="dynamic-cohort-section">
     <div class="embedded-form-wrapper" style="border: 2px solid var(--accent-indigo); border-radius: 12px; overflow: hidden; background-color: var(--bg-card); margin-top: 40px;">
@@ -156,7 +137,7 @@
         </div>
         
         <!-- PUBLIC SECURE GOOGLE FORM EMBED -->
-        <iframe id="google-form-iframe" src="https://google.com" width="100%" height="950" frameborder="0" style="background-color: #ffffff; display: block;">Loading application module...</iframe>
+        <iframe id="google-form-iframe" src="https://forms.gle/EyNEJVCPsgigVjJo6" width="100%" height="950" frameborder="0" style="background-color: #ffffff; display: block;">Loading application module...</iframe>
     </div>
 </div>
 
