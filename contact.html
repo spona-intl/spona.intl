@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPONA Intl. | Contact</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc; --bg-card: #ffffff; --border-color: #cbd5e1;
+            --text-primary: #0f172a; --text-secondary: #475569;
+            --accent-emerald: #059669; --accent-indigo: #4f46e5; --light-blue: #f0fdfa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; }
+        nav { position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); padding: 15px 20px; z-index: 1000; backdrop-filter: blur(8px); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-indigo); text-decoration: none; }
+        .nav-right-block { display: flex; align-items: center; gap: 25px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
+        .nav-links a.active, .nav-links a:hover { color: var(--accent-indigo); }
+        
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+        .page-header h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        .page-header p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; }
+        
+        .contact-card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; margin-bottom: 20px; text-align: left; display: flex; align-items: center; gap: 20px; text-decoration: none; transition: transform 0.2s, border-color 0.2s; }
+        .contact-card:hover { transform: translateY(-2px); border-color: var(--accent-indigo); }
+        .icon-box { width: 50px; height: 50px; border-radius: 10px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .contact-details h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+        .contact-details p { font-size: 0.95rem; color: var(--accent-indigo); font-weight: 600; word-break: break-all; }
+        
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPONA Intl.</a>
+            <div class="nav-right-block">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p>Have questions about our peer-led research, student cohorts, or local chapters? Reach out to our global team.</p>
+        </section>
+
+        <!-- Email Communication Card -->
+        <a href="mailto:spona.intl.info@gmail.com" class="contact-card">
+            <div class="icon-box">✉️</div>
+            <div class="contact-details">
+                <h3>Official Email Address</h3>
+                <p>spona.intl.info@gmail.com</p>
+            </div>
+        </a>
+
+        <!-- Instagram Communication Card -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="icon-box">📸</div>
+            <div class="contact-details">
+                <h3>Instagram Handle</h3>
+                <p>@spona.intl</p>
+            </div>
+        </a>
+
+        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
+    </div>
+
+    <!-- Google Translate Script Initialization -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() { 
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+                autoDisplay: false
+            }, 'google_translate_element'); 
+        }
+    </script>
+    <script type="text/javascript" src="https://google.com"></script>
+</body>
+</html>
