@@ -6,35 +6,162 @@
     <title>SPONA Intl. | Home</title>
     <style>
         :root {
-            --bg-main: #f8fafc; --bg-card: #ffffff; --border-color: #cbd5e1;
-            --text-primary: #0f172a; --text-secondary: #475569;
-            --accent-emerald: #059669; --accent-indigo: #4f46e5; --light-blue: #f0fdfa;
+            /* Sleek Modern Aesthetics: Premium Deep Slate & Intelligent Violet Aura */
+            --bg-main: #0b0f19; 
+            --bg-card: #131b2e; 
+            --border-color: #1e293b;
+            --text-primary: #f8fafc; 
+            --text-secondary: #94a3b8;
+            --accent-emerald: #10b981; 
+            --accent-indigo: #6366f1; 
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --light-blue: rgba(16, 185, 129, 0.1);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; }
-        nav { position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); padding: 15px 20px; z-index: 1000; backdrop-filter: blur(8px); }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: var(--bg-main); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+            background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 450px),
+                              radial-gradient(circle at 10% 40%, rgba(16, 185, 129, 0.04), transparent 400px);
+            background-attachment: fixed;
+        }
+        
+        /* Navigation Hub Layout */
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background-color: rgba(11, 15, 25, 0.85); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 18px 20px; 
+            z-index: 1000; 
+            backdrop-filter: blur(12px); 
+        }
         .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-indigo); text-decoration: none; }
+        .nav-logo { font-weight: 800; font-size: 1.3rem; color: #ffffff; text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent-indigo); }
         .nav-right-block { display: flex; align-items: center; gap: 25px; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
-        .nav-links a.active, .nav-links a:hover { color: var(--accent-indigo); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px 40px 20px; }
-        .hero { text-align: center; padding: 80px 20px; background: linear-gradient(180deg, #edf2f9 0%, var(--bg-main) 100%); border-radius: 16px; margin-bottom: 20px; border: 1px solid var(--border-color); }
-        .logo-subtitle { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-emerald); font-weight: 700; margin-bottom: 10px; }
-        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
-        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; margin-bottom: 24px; }
-        .badge { font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; background-color: var(--light-blue); color: var(--accent-emerald); border: 1px solid rgba(5, 150, 105, 0.2); }
-        .embedded-form-wrapper { margin-top: 40px; border: 2px solid var(--accent-emerald); border-radius: 12px; overflow: hidden; background-color: var(--bg-card); }
-        .form-header-bar { background-color: var(--light-blue); padding: 20px 30px; border-bottom: 1px solid var(--border-color); }
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; margin-top: 60px; }
+        .nav-links { display: flex; gap: 8px; list-style: none; }
+        
+        /* Interactive Nav Link Buttons & Smooth Transitions */
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-secondary); 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-links a.active, .nav-links a:hover { 
+            color: #ffffff; 
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .nav-links a.active {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px 40px 20px; }
+        
+        /* Hero Workspace Frame Layout */
+        .hero { 
+            text-align: center; 
+            padding: 80px 20px; 
+            background: linear-gradient(180deg, rgba(19, 27, 46, 0.6) 0%, var(--bg-card) 100%); 
+            border-radius: 20px; 
+            margin-bottom: 40px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        .logo-subtitle { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-emerald); font-weight: 800; margin-bottom: 16px; }
+        h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.2; color: #ffffff; }
+        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 720px; margin: 0 auto; }
+        
+        /* Core Portal Window Container */
+        .embedded-form-wrapper { 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            background-color: var(--bg-card); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.05); 
+        }
+        
+        /* Information Header Layout Block */
+        .form-header-bar { 
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, transparent 100%); 
+            padding: 40px; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        
+        /* Badges & Micro-tags */
+        .badge { 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            background-color: var(--light-blue); 
+            color: var(--accent-emerald); 
+            border: 1px solid rgba(16, 185, 129, 0.2); 
+            display: inline-block; 
+            letter-spacing: 0.5px;
+        }
+        
+        /* Metrics / Infographic Grid Setup */
+        .logistics-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 16px; 
+            margin-bottom: 40px; 
+            text-align: left;
+        }
+        .metric-card {
+            background: rgba(11, 15, 25, 0.5); 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Hover Micro-interactions For Cards */
+        .metric-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+        .metric-card strong { color: var(--accent-indigo); display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .metric-card span { color: #ffffff; font-size: 1rem; font-weight: 600; }
+        
+        /* Interactive Sub-Team Matrix Blocks */
+        .roles-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); 
+            gap: 14px; 
+            text-align: left;
+        }
+        .role-card {
+            border: 1px dashed var(--border-color); 
+            padding: 16px; 
+            border-radius: 10px; 
+            background-color: rgba(11, 15, 25, 0.3);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+        }
+        .role-card:hover {
+            border-style: solid;
+            border-color: var(--accent-indigo);
+            background-color: rgba(99, 102, 241, 0.04);
+            transform: scale(1.02);
+        }
+        .role-card span { font-size: 1.4rem; display: block; margin-bottom: 4px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+        .role-card strong { font-size: 0.9rem; color: #ffffff; display: block; font-weight: 600; }
+        
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; margin-top: 80px; }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA Intl.</a>
+            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
             <div class="nav-right-block">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -47,92 +174,40 @@
             </div>
         </div>
     </nav>
+    
     <div class="container">
         <div class="hero">
             <div class="logo-subtitle">SPONA International</div>
             <h1>The Student-led Peer Outreach and Neuroscience Association</h1>
             <p>Bridging the gap between global youth collaboration and the cutting-edge world of brain science.</p>
         </div>
-       
-   <!-- Form Section (Removed display:none fallback so it works even if script fails) -->
-<div id="dynamic-cohort-section">
-    <div class="embedded-form-wrapper">
-        <div class="form-header-bar">
-            <span class="badge" style="background-color: var(--accent-emerald); color: white; margin-bottom: 8px; display: inline-block;">Admissions Active</span>
-            <h3 style="margin-bottom: 4px; font-size: 1.25rem; font-weight: 600;">Apply: SPONA Intl. 6-Month Programme</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0;">Fill out the official registration module below to secure your placement inside our bi-annual student cohort.</p>
-        </div>
-        <!-- FIXED EMBED URL STRUCTURE -->
-        <iframe id="google-form-iframe" src="https://google.com" width="100%" height="800" frameborder="0">Loading registration form...</iframe>
-    </div>
-</div>
 
-        <!-- Form Section with Detailed Programme Structure & Fixed Google Form Embed -->
-<div id="dynamic-cohort-section">
-    <div class="embedded-form-wrapper" style="border: 2px solid var(--accent-indigo); border-radius: 12px; overflow: hidden; background-color: var(--bg-card); margin-top: 40px;">
-        
-        <!-- HEADER BLOCK -->
-        <div class="form-header-bar" style="background: linear-gradient(180deg, var(--light-blue) 0%, #ffffff 100%); padding: 35px 30px; border-bottom: 1px solid var(--border-color);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
-                <span class="badge" style="background-color: var(--accent-emerald); color: white; margin-bottom: 0;">Admissions Active</span>
-                <span class="badge" style="background-color: #f1f5f9; color: var(--text-secondary); border: 1px solid var(--border-color);">🔒 Global Quota: 20 Seats Max</span>
-            </div>
-            <h3 style="margin-bottom: 8px; font-size: 1.6rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px;">Apply: SPONA Intl. 6-Month Programme</h3>
-            <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 30px; max-width: 800px;">Join an elite, global cohort of 20 ambitious students. Selected applicants will be grouped into international, cross-functional teams of 5. Together, these groups will collaborate over 6 months to publish peer-led neuroscience, psychology, psychiatry, medicine, surgery, and AI projects.</p>
-            
-            <!-- PROGRAMME LOGISTICS SUB-GRID -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 35px; text-align: left;">
-                <div style="background: var(--bg-main); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <strong style="color: var(--accent-indigo); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">⏳ Programme Duration</strong>
-                    <span style="color: var(--text-primary); font-size: 0.95rem; font-weight: 600;">6 Months</span>
-                </div>
-                <div style="background: var(--bg-main); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <strong style="color: var(--accent-indigo); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">⏰ Weekly Commitment</strong>
-                    <span style="color: var(--text-primary); font-size: 0.95rem; font-weight: 600;">2–4 Hours / Week (Flexible)</span>
-                </div>
-                <div style="background: var(--bg-main); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <strong style="color: var(--accent-indigo); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">👥 Team Structure</strong>
-                    <span style="color: var(--text-primary); font-size: 0.95rem; font-weight: 600;">4 teams of 5 Students each</span>
-                </div>
-                <div style="background: var(--bg-main); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <strong style="color: var(--accent-indigo); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">💎 Tuition Fee</strong>
-                    <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.95rem;">100% Free</span>
-                </div>
-            </div>
-
-            <!-- CORE POD ROLES DISPLAY PANEL -->
-            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">🧬 Inside Every 5-Person Pod:</h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; text-align: left;">
-                <div style="border: 1px dashed var(--border-color); padding: 12px; border-radius: 6px;">
-                    <span style="font-size: 1.2rem; display: block; margin-bottom: 2px;">📝</span>
-                    <strong style="font-size: 0.95rem; color: var(--text-primary); display: block;">Content Writer</strong>
-                </div>
-                <div style="border: 1px dashed var(--border-color); padding: 12px; border-radius: 6px;">
-                    <span style="font-size: 1.2rem; display: block; margin-bottom: 2px;">📜</span>
-                    <strong style="font-size: 0.95rem; color: var(--text-primary); display: block;">Research Analyst</strong>
-                </div>
-                <div style="border: 1px dashed var(--border-color); padding: 12px; border-radius: 6px;">
-                    <span style="font-size: 1.2rem; display: block; margin-bottom: 2px;">🎨</span>
-                    <strong style="font-size: 0.95rem; color: var(--text-primary); display: block;">Digital Designer</strong>
-                </div>
-                <div style="border: 1px dashed var(--border-color); padding: 12px; border-radius: 6px;">
-                    <span style="font-size: 1.2rem; display: block; margin-bottom: 2px;">📺</span>
-                    <strong style="font-size: 0.95rem; color: var(--text-primary); display: block;">Media Animator</strong>
-                </div>
-                <div style="border: 1px dashed var(--border-color); padding: 12px; border-radius: 6px;">
-                    <span style="font-size: 1.2rem; display: block; margin-bottom: 2px;">💬</span>
-                    <strong style="font-size: 0.95rem; color: var(--text-primary); display: block;">Multilingual Translator</strong>
-                </div>
-            </div>
-        </div>
-        
-        <!-- PUBLIC SECURE GOOGLE FORM EMBED -->
-        <iframe id="google-form-iframe" src="https://forms.gle/EyNEJVCPsgigVjJo6" width="100%" height="950" frameborder="0" style="background-color: #ffffff; display: block;">Loading application module...</iframe>
-    </div>
-</div>
-
-        
-<footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
-        
-</body>
-</html>
+        <!-- APPLICATION CONTAINER TIMELINE LAYER -->
+        <div id="dynamic-cohort-section">
+            <div class="embedded-form-wrapper">
+                
+                <div class="form-header-bar">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                        <span class="badge">Admissions Active</span>
+                        <span class="badge" style="background-color: rgba(99, 102, 241, 0.1); color: var(--accent-indigo); border-color: rgba(99, 102, 241, 0.2);">🔒 Global Quota: 20 Seats Max</span>
+                    </div>
+                    <h3 style="margin-bottom: 12px; font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">Apply: SPONA Intl. 6-Month Programme</h3>
+                    
+                    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 35px; max-width: 850px; line-height: 1.7;">Join an elite, global cohort of 20 ambitious students. Selected applicants will be grouped into international, cross-functional teams of 5. Together, these teams will collaborate over 6 months to publish peer-led neuroscience, psychology, psychiatry, medicine, surgery, and AI projects.</p>
+                    
+                    <!-- Logistics Infographic Grid -->
+                    <div class="logistics-grid">
+                        <div class="metric-card">
+                            <strong>⏳ Programme Duration</strong>
+                            <span>6 Months</span>
+                        </div>
+                        <div class="metric-card">
+                            <strong>⏰ Weekly Commitment</strong>
+                            <span>2–4 Hours / Week (Asynchronous)</span>
+                        </div>
+                        <div class="metric-card">
+                            <strong>👥 Team Structure</strong>
+                            <span>4 Teams of 5 Students</span>
+                        </div>
+                        <div class="metric-card">
+                            <strong>💎 Tuition Fee</strong>
