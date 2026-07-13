@@ -6,85 +6,74 @@
     <title>SPONA Intl. | Contact</title>
     <style>
         :root {
-            --bg-main: #f8fafc; --bg-card: #ffffff; --border-color: #cbd5e1;
-            --text-primary: #0f172a; --text-secondary: #475569;
-            --accent-emerald: #059669; --accent-indigo: #4f46e5; --light-blue: #f0fdfa;
+            --bg-main: #0b0f19; --bg-card: #131b2e; --border-color: #1e293b;
+            --text-primary: #f8fafc; --text-secondary: #94a3b8;
+            --accent-emerald: #10b981; --accent-indigo: #6366f1; 
+            --accent-glow: rgba(99, 102, 241, 0.15);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; }
-        nav { position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); padding: 15px 20px; z-index: 1000; backdrop-filter: blur(8px); }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; 
+            background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 450px);
+            background-attachment: fixed;
+        }
+        nav { position: sticky; top: 0; background-color: rgba(11, 15, 25, 0.85); border-bottom: 1px solid var(--border-color); padding: 18px 20px; z-index: 1000; backdrop-filter: blur(12px); }
         .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-indigo); text-decoration: none; }
+        .nav-logo { font-weight: 800; font-size: 1.3rem; color: #ffffff; text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent-indigo); }
         .nav-right-block { display: flex; align-items: center; gap: 25px; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
-        .nav-links a.active, .nav-links a:hover { color: var(--accent-indigo); }
+        .nav-links { display: flex; gap: 8px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.9rem; padding: 8px 16px; border-radius: 8px; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-links a.active, .nav-links a:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.05); }
+        .nav-links a.active { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
         
-        .container { max-width: 600px; margin: 0 auto; padding: 60px 20px; text-align: center; }
-        .page-header h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        .container { max-width: 600px; margin: 0 auto; padding: 80px 20px; text-align: center; }
+        .page-header h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; color: #ffffff; }
         .page-header p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; }
         
-        .contact-card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; margin-bottom: 20px; text-align: left; display: flex; align-items: center; gap: 20px; text-decoration: none; transition: transform 0.2s, border-color 0.2s; }
-        .contact-card:hover { transform: translateY(-2px); border-color: var(--accent-indigo); }
-        .icon-box { width: 50px; height: 50px; border-radius: 10px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-        .contact-details h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
-        .contact-details p { font-size: 0.95rem; color: var(--accent-indigo); font-weight: 600; word-break: break-all; }
-        
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; margin-top: 60px; }
+        .contact-card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 25px; border-radius: 16px; margin-bottom: 20px; text-align: left; display: flex; align-items: center; gap: 20px; text-decoration: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .contact-card:hover { transform: translateY(-4px); border-color: var(--accent-indigo); box-shadow: 0 12px 30px var(--accent-glow); }
+        .contact-card:hover .contact-details p { color: #ffffff; }
+        .icon-box { width: 52px; height: 52px; border-radius: 12px; background-color: rgba(99, 102, 241, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--accent-indigo); }
+        .contact-details h3 { font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 3px; }
+        .contact-details p { font-size: 0.95rem; color: var(--accent-indigo); font-weight: 600; word-break: break-all; transition: color 0.2s ease; }
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; margin-top: 80px; }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA Intl.</a>
+            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
             <div class="nav-right-block">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
                 <div id="google_translate_element"></div>
             </div>
         </div>
     </nav>
-
     <div class="container">
         <section class="page-header">
             <h1>Contact Us</h1>
             <p>Have questions about our peer-led research, student cohorts, or local chapters? Reach out to our global team.</p>
         </section>
-
-        <!-- Email Communication Card -->
         <a href="mailto:spona.intl.info@gmail.com" class="contact-card">
             <div class="icon-box">✉️</div>
-            <div class="contact-details">
-                <h3>Official Email Address</h3>
-                <p>spona.intl.info@gmail.com</p>
-            </div>
+            <div class="contact-details"><h3>Official Email Address</h3><p>spona.intl.info@gmail.com</p></div>
         </a>
-
-        <!-- Instagram Communication Card -->
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-card">
             <div class="icon-box">📸</div>
-            <div class="contact-details">
-                <h3>Instagram Handle</h3>
-                <p>@spona.intl</p>
-            </div>
+            <div class="contact-details"><h3>Instagram Handle</h3><p>@spona.intl</p></div>
         </a>
-
         <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
     </div>
-
-    <!-- Google Translate Script Initialization -->
     <script type="text/javascript">
-        function googleTranslateElementInit() { 
-            new google.translate.TranslateElement({
-                pageLanguage: 'en', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
-                autoDisplay: false
-            }, 'google_translate_element'); 
-        }
+        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element'); }
     </script>
     <script type="text/javascript" src="https://google.com"></script>
 </body>
