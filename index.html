@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPONA Intl. | Home</title>
-    <!-- Google Fonts for High-End Typography -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --bg-main: #0b0f19;
@@ -21,23 +16,19 @@
             --accent-glow: rgba(99, 102, 241, 0.15);
             --light-blue: rgba(16, 185, 129, 0.1);
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
             line-height: 1.6;
             background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 450px);
             background-attachment: fixed;
         }
-
-        /* Navigation Style */
         nav {
             position: sticky;
             top: 0;
@@ -46,9 +37,7 @@
             padding: 18px 20px;
             z-index: 1000;
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
         }
-
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -58,32 +47,26 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-
         .nav-logo {
-            font-family: 'Syne', sans-serif;
             font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #ffffff;
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-
         .nav-logo span {
             color: var(--accent-indigo);
         }
-
         .nav-right-block {
             display: flex;
             align-items: center;
             gap: 25px;
         }
-
         .nav-links {
             display: flex;
             gap: 8px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--text-secondary);
@@ -93,24 +76,18 @@
             border-radius: 8px;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .nav-links a.active, .nav-links a:hover {
             color: #ffffff;
             background-color: rgba(255, 255, 255, 0.05);
         }
-
         .nav-links a.active {
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
-
-        /* Main Container Layout */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 60px 20px 40px 20px;
         }
-
-        /* Hero Element Styling */
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -120,7 +97,6 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
-
         .logo-subtitle {
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -129,9 +105,7 @@
             font-weight: 800;
             margin-bottom: 16px;
         }
-
         h1 {
-            font-family: 'Syne', sans-serif;
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 20px;
@@ -139,15 +113,12 @@
             line-height: 1.2;
             color: #ffffff;
         }
-
         .hero p {
             font-size: 1.15rem;
             color: var(--text-secondary);
             max-width: 720px;
             margin: 0 auto;
         }
-
-        /* Form Wrapper Elements */
         .embedded-form-wrapper {
             border: 1px solid var(--border-color);
             border-radius: 20px;
@@ -155,46 +126,11 @@
             background-color: var(--bg-card);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
         .form-header-bar {
             background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, transparent 100%);
             padding: 40px;
             border-bottom: 1px solid var(--border-color);
         }
-
-        .form-meta-row {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 12px; 
-            margin-bottom: 20px;
-        }
-
-        .form-header-bar h3 {
-            font-family: 'Syne', sans-serif;
-            margin-bottom: 12px; 
-            font-size: 1.8rem; 
-            font-weight: 800; 
-            color: #ffffff; 
-            letter-spacing: -0.5px;
-        }
-
-        .form-header-bar p {
-            color: var(--text-secondary); 
-            font-size: 1.05rem; 
-            margin-bottom: 35px; 
-            max-width: 850px; 
-            line-height: 1.7;
-        }
-
-        .form-header-bar h4 {
-            font-size: 1.1rem; 
-            font-weight: 700; 
-            margin-bottom: 20px; 
-            color: #ffffff;
-        }
-
         .badge {
             font-size: 0.75rem;
             font-weight: 700;
@@ -206,14 +142,6 @@
             display: inline-block;
             letter-spacing: 0.5px;
         }
-
-        .badge-quota {
-            background-color: rgba(99, 102, 241, 0.1); 
-            color: var(--accent-indigo); 
-            border-color: rgba(99, 102, 241, 0.2);
-        }
-
-        /* Responsive Grids */
         .logistics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -221,7 +149,6 @@
             margin-bottom: 40px;
             text-align: left;
         }
-
         .metric-card {
             background: rgba(11, 15, 25, 0.5);
             padding: 20px;
@@ -229,13 +156,11 @@
             border: 1px solid var(--border-color);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .metric-card:hover {
             transform: translateY(-4px);
             border-color: var(--accent-indigo);
             box-shadow: 0 10px 25px var(--accent-glow);
         }
-
         .metric-card strong {
             color: var(--accent-indigo);
             display: block;
@@ -244,20 +169,17 @@
             letter-spacing: 1px;
             margin-bottom: 4px;
         }
-
         .metric-card span {
             color: #ffffff;
             font-size: 1rem;
             font-weight: 600;
         }
-
         .roles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 14px;
             text-align: left;
         }
-
         .role-card {
             border: 1px dashed var(--border-color);
             padding: 16px;
@@ -265,7 +187,6 @@
             background-color: rgba(11, 15, 25, 0.3);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .role-card:hover {
             border-style: solid;
             border-color: var(--accent-indigo);
@@ -273,28 +194,17 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 25px var(--accent-glow);
         }
-
         .role-card span {
             font-size: 1.4rem;
             display: block;
             margin-bottom: 4px;
         }
-
         .role-card strong {
             font-size: 0.9rem;
             color: #ffffff;
             display: block;
             font-weight: 600;
         }
-
-        /* Iframe Containment block */
-        #google-form-iframe {
-            background-color: var(--bg-card); 
-            display: block; 
-            border: none;
-        }
-
-        /* Footer Elements */
         footer {
             text-align: center;
             padding: 40px 0;
@@ -303,14 +213,12 @@
             font-size: 0.85rem;
             margin-top: 80px;
         }
-
         footer a {
             color: var(--accent-indigo);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s ease;
         }
-
         footer a:hover {
             color: #ffffff;
             text-decoration: underline;
@@ -318,10 +226,9 @@
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
             <div class="nav-right-block">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -338,3 +245,23 @@
     <div class="container">
         <div class="hero">
             <div class="logo-subtitle">SPONA International</div>
+            <h1>The Student-led Peer Outreach and Neuroscience Association</h1>
+            <p>Bridging the gap between global youth collaboration and the cutting-edge world of brain science.</p>
+        </div>
+
+        <div id="dynamic-cohort-section">
+            <div class="embedded-form-wrapper">
+                <div class="form-header-bar">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                        <span class="badge">Admissions Active</span>
+                        <span class="badge" style="background-color: rgba(99, 102, 241, 0.1); color: var(--accent-indigo); border-color: rgba(99, 102, 241, 0.2);">🔒 Global Quota: 20 Seats Max</span>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 12px; font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">Apply: SPONA Intl. 6-Month Programme</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 35px; max-width: 850px; line-height: 1.7;">Join an elite, global cohort of 20 ambitious students. Selected applicants will be grouped into international, cross-functional teams of 5. Together, these teams will collaborate over 6 months to publish peer-led neuroscience, psychology, psychiatry, medicine, surgery, and AI projects.</p>
+                    
+                    <div class="logistics-grid">
+                        <div class="metric-card"><strong>⏳ Programme Duration</strong><span>6 Months</span></div>
+                        <div class="metric-card"><strong>⏰ Weekly Commitment</strong><span>2–4 Hours / Week (Asynchronous)</span></div>
+                        <div class="metric-card"><strong>👥 Team Structure</strong><span>4 Teams of 5 Students</span></div>
+                        <div class="metric-card"><strong>💎 Tuition Fee</strong><span style="color: var(--accent-emerald);">100% Free</span></div>
