@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- 🧭 Navigation Header Structure -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
@@ -21,53 +22,63 @@
         </div>
     </nav>
 
+    <!-- 🏛️ Main Content Runway -->
     <main class="container" style="max-width: 850px;">
-        <div class="hero-wrapper" style="text-align: left;">
+        <div class="hero-wrapper" style="text-align: left; margin-bottom: 40px;">
             <div class="status-pill">Registry Records</div>
             <h1 style="text-align: left; margin: 0 0 16px 0;">Academic Mini-Projects</h1>
             <p style="text-align: left;">Browse our repository of peer-reviewed summaries, video animations, and multilingual research translations.</p>
         </div>
 
-        <input type="text" id="resourceSearch" class="search-bar" placeholder="Search by topic, keyword, or student UID...">
+        <!-- 🔍 Search Box Frame Input Element -->
+        <input type="text" id="resourceSearch" class="search-bar" placeholder="Search by topic, keyword, or full student UID (e.g., SI-CN-RA-100245)...">
 
-        <!-- 🏢 NEW: Beautiful Editorial Empty State Fallback Panel Embedded into Layout Stack -->
+        <!-- 📁 High-End Editorial Empty State Fallback Panel -->
         <div id="noResultsMessage" style="display: none; text-align: center; padding: 60px 40px; border: 1px dashed var(--border-subtle); background: var(--bg-card); margin-bottom: 40px;">
             <div style="font-size: 2rem; margin-bottom: 12px; filter: grayscale(1);">📁</div>
             <h3 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.4rem; font-weight: 400; color: var(--text-display); margin-bottom: 6px;">No Matching Entries Found</h3>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0; max-width: 480px; margin: 0 auto;">We couldn't find anything matching your search terms. Double-check your spelling, try search keywords, or verify the exact student identifier format.</p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0; max-width: 480px; margin: 0 auto;">We couldn't find anything matching your search terms. Double-check your spelling, try distinct keywords, or verify the exact student identifier format.</p>
         </div>
 
+        <!-- 📑 Data Asset Node Card Stack Wrapper -->
         <div id="resourceRegistry">
-            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="neuroplasticity adolescents research summary paper ra cn us">
-                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">
+            
+            <!-- Clickable Asset Node Item 1 -->
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="neuroplasticity adolescents research summary paper ra cn us si-cn-ra-100245 si-us-ra-105991">
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
                     <span>REVIEW PAPER</span><span>SI-CN-RA-100245 • SI-US-RA-105991</span>
                 </div>
                 <h3>"Neuroplasticity in Adolescents" Research Summary</h3>
                 <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
             </a>
 
-            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="synaptic pruning summary spanish translation edition mt mx">
-                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">
+            <!-- Clickable Asset Node Item 2 -->
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="synaptic pruning summary spanish translation edition mt mx si-mx-mt-500147">
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
                     <span>TRANSLATION (ES)</span><span>SI-MX-MT-500147</span>
                 </div>
                 <h3>"Synaptic Pruning Summary" (Spanish Translation)</h3>
                 <p>A localized linguistic conversion of developmental synaptic elimination guidelines for cross-border global chapters.</p>
             </a>
 
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="action potentials visualized animations media animator ma dd gb ca">
-                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">
+            <!-- Clickable Asset Node Item 3 -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="action potentials visualized animations media animator ma dd gb ca si-gb-ma-300412 si-ca-dd-200951">
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
                     <span>VIDEO ANIMATION</span><span>SI-GB-MA-300412 • SI-CA-DD-200951</span>
                 </div>
                 <h3>"Action Potentials Visualized" Video Animation</h3>
                 <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
             </a>
+            
         </div>
     </main>
 
+    <!-- 👣 Minimal Footer Signature Line -->
     <footer>
         <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
     </footer>
 
+    <!-- ⚡ HIGH-FIDELITY MATCHING MATRIX REGISTRY ENGINE SCRIPT -->
     <script>
         document.getElementById('resourceSearch').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase().trim();
@@ -75,7 +86,7 @@
             const noResultsMessage = document.getElementById('noResultsMessage');
             let visibleCount = 0;
 
-            // Split complex searches clean by spaces or token boundaries
+            // Split search query inputs into clean searchable sub-tokens
             const queryTokens = query.split(/[\s•\-]+/).filter(token => token.length > 0);
 
             cards.forEach(card => {
@@ -83,7 +94,7 @@
                 const primaryHeadingText = card.querySelector('h3').textContent.toLowerCase();
                 const totalCardContentText = `${dataSearchText} ${primaryHeadingText} ${card.textContent.toLowerCase()}`;
                 
-                // Confirm all user-typed parts match this node element matrix layout
+                // Confirm all user-typed query parts match this node element matrix layout
                 const isMatch = queryTokens.every(token => totalCardContentText.includes(token));
 
                 if (isMatch) {
@@ -94,7 +105,7 @@
                 }
             });
 
-            // Toggle state parameters smoothly handling the hidden warning block view layer
+            // Toggle layout visibility layer of the fallback empty folder container block
             if (visibleCount === 0 && queryTokens.length > 0) {
                 noResultsMessage.style.display = 'block';
             } else {
