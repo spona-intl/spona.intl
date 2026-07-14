@@ -2,11 +2,14 @@
     --bg-main: #fcfcfd;
     --bg-card: #ffffff;
     --border-subtle: #e2e8f0;
+    
+    /* 🖤 Upgraded High-End Charcoal & Luxury Onyx Palette */
     --text-display: #0f172a;
     --text-muted: #64748b;
-    --brand-indigo: #4f46e5;
-    --brand-indigo-light: #f1f5f9;
-    --glass-nav: rgba(252, 252, 253, 0.9);
+    --brand-dark: #1e293b;            /* Premium slate gray-charcoal replace for logos */
+    --brand-accent-bg: #f8fafc;      /* Replaces old bluish-purple light badge tints */
+    --brand-accent-text: #334155;    /* Sophisticated subtle tint for active indicators */
+    --brand-accent-border: #cbd5e1;  /* High-end clean border outline values */
 }
 
 * {
@@ -23,11 +26,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* 🧭 Navigation Bar Styles */
+/* 🧭 Navigation Header Structure */
 nav {
     position: sticky;
     top: 0;
-    background-color: var(--glass-nav);
+    background-color: rgba(252, 252, 253, 0.9);
     border-bottom: 1px solid var(--border-subtle);
     padding: 20px 40px;
     z-index: 1000;
@@ -51,8 +54,10 @@ nav {
     letter-spacing: -0.5px;
 }
 
+/* 🖤 UPDATED: Logo sub-brand color transitioned from bluish-purple to deep charcoal gray */
 .nav-logo span {
-    color: #4f46e5;
+    color: var(--brand-dark);
+    font-weight: 500;
 }
 
 .nav-links {
@@ -62,7 +67,7 @@ nav {
     align-items: center;
 }
 
-/* Pill-Style Navigation Link Design */
+/* Pill-Style Luxury Links */
 .nav-links a {
     text-decoration: none;
     color: #475569;
@@ -79,13 +84,14 @@ nav {
     background-color: #f8fafc;
 }
 
+/* 🖤 UPDATED: Active tab pill background color swapped from blue-purple to refined soft gray tint */
 .nav-links a.active {
     color: #0f172a;
-    background-color: #f1f5f9;
-    border-color: #e2e8f0;
+    background-color: var(--brand-accent-bg);
+    border-color: var(--brand-accent-border);
 }
 
-/* 🏛️ Layout Architecture */
+/* 🏛️ Main Canvas Area */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -115,17 +121,17 @@ nav {
     margin: 0 auto;
 }
 
-/* 🏷️ Status Pill and Luxury Blocks */
+/* 🖤 UPDATED: Upper Registry Badge Header Pill Layout Tinted Neutral Gray */
 .status-pill {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--brand-indigo);
-    background-color: rgba(79, 70, 229, 0.08);
-    border: 1px solid rgba(79, 70, 229, 0.15);
-    padding: 6px 16px;
+    color: var(--brand-accent-text);
+    background-color: var(--brand-accent-bg);
+    border: 1px solid var(--brand-accent-border);
+    padding: 6px 14px;
     border-radius: 4px;
     margin-bottom: 24px;
 }
@@ -152,10 +158,10 @@ nav {
 }
 
 .action-btn:hover {
-    background-color: var(--brand-indigo);
+    background-color: #334155;
 }
 
-/* 🎞️ Horizontal Scrolling Section */
+/* 🎞️ Horizontal Scroller Section */
 .publication-runway-section {
     margin-top: 80px;
 }
@@ -249,7 +255,7 @@ nav {
     padding-top: 12px;
 }
 
-/* 📑 Lists and Grid Layouts */
+/* 📑 Lists and Grid Architectures */
 .editorial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -275,6 +281,7 @@ nav {
     font-size: 0.95rem;
 }
 
+/* Search Bar Input Frame */
 .search-bar {
     width: 100%;
     padding: 16px 20px;
@@ -282,6 +289,7 @@ nav {
     border: 1px solid var(--border-subtle);
     outline: none;
     margin-bottom: 40px;
+    background-color: var(--bg-card);
     transition: border-color 0.2s ease;
 }
 
@@ -289,6 +297,7 @@ nav {
     border-color: var(--text-display);
 }
 
+/* 🖤 UPDATED: Card List Nodes Borders swap on selection */
 .list-item-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -297,11 +306,12 @@ nav {
     display: block;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .list-item-card:hover {
     border-color: var(--text-display);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
 }
 
 .list-item-card h3 {
@@ -320,7 +330,7 @@ nav {
     line-height: 1.5;
 }
 
-/* 👣 Footer Layout */
+/* 👣 Footer Line Setup */
 footer {
     text-align: center;
     padding: 60px 0 40px 0;
