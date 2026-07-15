@@ -30,7 +30,7 @@ nav {
   top: 0;
   background-color: rgba(252, 252, 253, 0.9);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 20px 40px;
+  padding: 16px 20px;
   z-index: 1000;
   backdrop-filter: blur(20px);
 }
@@ -41,6 +41,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .nav-logo {
@@ -50,6 +51,7 @@ nav {
   color: #000000;
   text-decoration: none;
   letter-spacing: -0.5px;
+  flex-shrink: 0;
 }
 
 .nav-logo span {
@@ -59,9 +61,28 @@ nav {
 
 .nav-links {
   display: flex;
+  flex-direction: row;
   gap: 8px;
   list-style: none;
   align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  
+  /* Hides scrollbars universally */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.nav-links li {
+  scroll-snap-align: start;
+  display: inline-block;
 }
 
 /* Pill-Style Links */
@@ -329,47 +350,4 @@ footer {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: 80px;
-}
-
-/* 📱 Responsive Mobile Navigation Framework Patch */
-@media (max-width: 680px) {
-  nav {
-    padding: 16px;
-  }
-  
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    width: 100%;
-  }
-  
-  .nav-links {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-    justify-content: flex-start;
-    gap: 4px;
-    
-    /* Invisible layout metric paths */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-  }
-  
-  .nav-links::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera webkit engine bypass */
-  }
-  
-  .nav-links li {
-    scroll-snap-align: start;
-    display: inline-block;
-  }
-  
-  .nav-links a {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-  }
 }
