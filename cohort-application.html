@@ -1,181 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | 6-Month International Cohort</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .cohort-wrapper {
-            max-width: 850px;
-            margin: 60px auto;
-            padding: 0 20px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        .logistics-timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        .logistics-card {
-            background: var(--bg-card, #f8fafc);
-            border: 1px solid var(--border-subtle, #e2e8f0);
-            padding: 24px;
-            text-align: left;
-        }
-        .logistics-card strong {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted, #64748b);
-            margin-bottom: 6px;
-        }
-        .logistics-card span {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-display, #0f172a);
-        }
-        
-        /* Information Sections Style */
-        .info-section {
-            margin: 40px 0;
-            border-bottom: 1px solid var(--border-subtle, #e2e8f0);
-            padding-bottom: 30px;
-        }
-        .info-section h2 {
-            font-family: 'Times New Roman', Georgia, serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 16px;
-            color: var(--text-display, #0f172a);
-        }
-        .info-section h3 {
-            font-size: 1.1rem;
-            margin: 20px 0 8px 0;
-            color: var(--text-display, #0f172a);
-        }
-        .info-section p {
-            color: var(--text-muted, #475569);
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-        .bullet-list {
-            margin: 16px 0;
-            padding-left: 20px;
-        }
-        .bullet-list li {
-            margin-bottom: 10px;
-            color: var(--text-muted, #475569);
-            line-height: 1.5;
-        }
-
-        /* State Blocks Visibility */
-        #application-active-window, #application-closed-window {
-            display: none;
-        }
-        .countdown-banner {
-            background: #f8fafc;
-            border: 1px solid var(--border-subtle, #e2e8f0);
-            padding: 40px;
-            text-align: center;
-            margin-top: 30px;
-        }
-        .form-frame-holder {
-            width: 100%;
-            height: 1000px;
-            border: none;
-            margin-top: 30px;
-            background: #ffffff;
-        }
-        .status-pill {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid transparent;
-            margin-bottom: 16px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPONA Intl. | 6-Month International Cohort</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cohort-wrapper { max-width: 850px; margin: 60px auto; padding: 0 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.logistics-timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 40px 0; }
+.logistics-card { background: var(--bg-card, #f8fafc); border: 1px solid var(--border-subtle, #e2e8f0); padding: 24px; text-align: left; }
+.logistics-card strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted, #64748b); margin-bottom: 6px; }
+.logistics-card span { font-size: 1.1rem; font-weight: 500; color: var(--text-display, #0f172a); }
+/* Information Sections Style */
+.info-section { margin: 40px 0; border-bottom: 1px solid var(--border-subtle, #e2e8f0); padding-bottom: 30px; }
+.info-section h2 { font-family: 'Times New Roman', Georgia, serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 16px; color: var(--text-display, #0f172a); }
+.info-section h3 { font-size: 1.1rem; margin: 20px 0 8px 0; color: var(--text-display, #0f172a); }
+.info-section p { color: var(--text-muted, #475569); line-height: 1.6; margin-bottom: 16px; }
+.bullet-list { margin: 16px 0; padding-left: 20px; }
+.bullet-list li { margin-bottom: 10px; color: var(--text-muted, #475569); line-height: 1.5; }
+/* State Blocks Visibility */
+#application-active-window, #application-closed-window { display: none; }
+.countdown-banner { background: #f8fafc; border: 1px solid var(--border-subtle, #e2e8f0); padding: 40px; text-align: center; margin-top: 30px; }
+.form-frame-holder { width: 100%; height: 1000px; border: none; margin-top: 30px; background: #ffffff; }
+.status-pill { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; border: 1px solid transparent; margin-bottom: 16px; }
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="cohort-wrapper">
-        <div class="hero-wrapper" style="text-align: left; margin-bottom: 30px;">
-            <div id="live-status-pill" class="status-pill">Checking Status...</div>
-            <h1 style="text-align: left; margin: 0 0 16px 0; font-size: 2.5rem;">6-Month International Cohort</h1>
-            <p style="text-align: left; color: var(--text-muted, #475569); line-height: 1.6;">Form multi-national student tracks, coordinate clinical data registries, and author peer-reviewed brain science articles.</p>
-        </div>
-
-        <section class="logistics-timeline-grid">
-            <div class="logistics-card"><strong>⏳ Programme Window</strong><span>6 Months Asynchronous</span></div>
-            <div class="logistics-card"><strong>🗓️ Regular Cycle</strong><span>Opens every 6 Months</span></div>
-            <div class="logistics-card"><strong>🎯 Next Active Term</strong><span>August 01 – August 25</span></div>
-        </section>
-
-        <!-- SECTION 1: Program Architecture -->
-        <section class="info-section">
-            <h2>🔄 1. The Self-Paced Program Structure</h2>
-            <p>We understand that secondary school students face demanding academic workloads. This program features a flexible, self-paced architecture with no mandatory weekly live video classes. You manage your own hours, balancing your cohort tasks with your local school schedule.</p>
-            
-            <h3>🎬 Orientation Week (Kick-Off)</h3>
-            <p>To align our global team, the cohort begins with a brief, 15-minute live orientation meeting on Discord. Multiple time slots are offered to accommodate all global time zones. All sessions are recorded so students can watch the archive if they cannot attend live due to scheduling conflicts. Following this initial week, the remainder of the 6-month program transitions to a 100% self-paced workflow.</p>
-            
-            <h3>⏱️ Month-over-Month Milestones & Team Rotations</h3>
-            <p>The cohort consists of 20 selected international students, split into 4 specialized tracks of 5 students each. To maximize your international networking, teams rotate regularly. You will change groups throughout the 6-month cycle to collaborate with fresh teammates across the cohort.</p>
-            <p>Every single month, your current 5-person group will collaborate independently to produce and publish a cohesive neuroscience multimedia project. The elements your team is responsible for managing include:</p>
-            <ul class="bullet-list">
-                <li><strong>Scientific Literature Review:</strong> A research paper breaking down a specific brain science topic.</li>
-                <li><strong>Educational Animation:</strong> A short, high-quality video explaining that month's research.</li>
-                <li><strong>Target Language Translation:</strong> Translation of the core paper into one secondary language of your choice to drive regional access.</li>
-                <li><strong>Media Kit & Content:</strong> Accompanying graphic design assets and written educational social posts.</li>
-            </ul>
-        </section>
-
-        <!-- SECTION 2: Rules & Requirements -->
-        <section class="info-section">
-            <h2>📦 2. Submission Rules & Graduation Requirements</h2>
-            <p>While the program runs on a monthly project cycle, we offer individual flexibility to accommodate your personal school exams, assignments, and holidays:</p>
-            <ul class="bullet-list">
-                <li><strong>Submission Flexibility:</strong> Students have the freedom to submit more or fewer individual project assets depending on their monthly availability.</li>
-                <li><strong>Graduation Requirement:</strong> To successfully graduate from the program and receive your official certificate, you must actively contribute to at least 6 complete projects across the 6-month cycle.</li>
-                <li><strong>The Review Rule:</strong> Before any content goes live, it must enter a mandatory, text-based peer review window where all 5 team members log in independently to cross-check facts and sign off on edits.</li>
-            </ul>
-        </section>
-
-        <!-- SECTION 3: Admissions & Early Protocol -->
-        <section class="info-section">
-            <h2>📈 3. Verifiable Portfolio Gains & University Admissions Protocol</h2>
-            <p>By maintaining consistency across this 6-month cycle and collaborating with a diverse group of global peers, you will exit the program with highly disciplined project management skills, a vast international network, and a robust, verified portfolio of published research—a critical advantage for competitive university applications.</p>
-            
-            <h3>⚡ Exceptional Case Protocol (Early Graduation)</h3>
-            <p>We recognize that college application timelines vary globally. In exceptional cases where a student needs to include their verified SPONA credentials on a CV for imminent university admissions, early graduation is permitted.</p>
-            <ul class="bullet-list">
-                <li><strong>Requirements:</strong> The student can still complete the work at their own pace, but must contribute to a minimum of 3 complete projects.</li>
-                <li><strong>Mandatory Action:</strong> The student must notify their supervisor prior to their university admissions deadline so the supervisor can contact Headquarters (HQ) for formal registry verification and expedite the early graduation documentation.</li>
-            </ul>
-        </section>
-
-        <!-- 🔓 STATE 1: Active Registration Module Frame -->
-        <div id="application-active-window">
-            <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 12px;">Active Registration Module</h2>
-            <p style="color: var(--text-muted, #64748b); font-size: 0.95rem;">Complete the international entry form below. Applications for this cycle will close strictly on <strong>August 25th at 23:59 UTC</strong>.</p>
-            <!-- Live Embedded Form Window Frame -->
-            <iframe class="form-frame-holder" src="https://forms.gle/A65BjeNJjr14ST517">Loading application platform...</iframe>
-        </div>
-
-        <!-- 🔒 STATE 2: Closed Application Fallback Screen -->
+<nav>
+<div class="nav-container">
+<a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="resources.html">Resources</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+<main class="cohort-wrapper">
+<div class="hero-wrapper" style="text-align: left; margin-bottom: 30px;">
+<div id="live-status-pill" class="status-pill">Checking Status...</div>
+<h1 style="text-align: left; margin: 0 0 16px 0; font-size: 2.5rem;">6-Month International Cohort</h1>
+<p style="text-align: left; color: var(--text-muted, #475569); line-height: 1.6;">Form multi-national student tracks, coordinate clinical data registries, and author peer-reviewed brain science articles.</p>
+</div>
+<section class="logistics-timeline-grid">
+<div class="logistics-card"><strong>⏳ Programme Window</strong><span>6 Months Asynchronous</span></div>
+<div class="logistics-card"><strong>🗓️ Regular Cycle</strong><span>Opens every 6 Months</span></div>
+<div class="logistics-card"><strong>🎯 Next Active Term</strong><span>August 01 – August 25</span></div>
+</section>
+<!-- SECTION 1: Program Architecture -->
+<section class="info-section">
+<h2>🔄 1. The Self-Paced Program Structure</h2>
+<p>We understand that secondary school students face demanding academic workloads. This program features a flexible, self-paced architecture with no mandatory weekly live video classes. You manage your own hours, balancing your cohort tasks with your local school schedule.</p>
+<h3>🎬 Orientation Week (Kick-Off)</h3>
+<p>To align our global team, the cohort begins with a brief, 15-minute live orientation meeting on Discord. Multiple time slots are offered to accommodate all global time zones. All sessions are recorded so students can watch the archive if they cannot attend live due to scheduling conflicts. Following this initial week, the remainder of the 6-month program transitions to a 100% self-paced workflow.</p>
+<h3>⏱️ Month-over-Month Milestones & Team Rotations</h3>
+<p>The cohort consists of 20 selected international students, split into 4 specialized tracks of 5 students each. To maximize your international networking, teams rotate regularly. You will change groups throughout the 6-month cycle to collaborate with fresh teammates across the cohort.</p>
+<p>Every single month, your current 5-person group will collaborate independently to produce and publish a cohesive neuroscience multimedia project. The elements your team is responsible for managing include:</p>
+<ul class="bullet-list">
+<li><strong>Scientific Literature Review:</strong> A research paper breaking down a specific brain science topic.</li>
+<li><strong>Educational Animation:</strong> A short, high-quality video explaining that month's research.</li>
+<li><strong>Target Language Translation:</strong> Translation of the core paper into one secondary language of your choice to drive regional access.</li>
+<li><strong>Media Kit & Content:</strong> Accompanying graphic design assets and written educational social posts.</li>
+</ul>
+</section>
+<!-- SECTION 2: Rules & Requirements -->
+<section class="info-section">
+<h2>📦 2. Submission Rules & Graduation Requirements</h2>
+<p>While the program runs on a monthly project cycle, we offer individual flexibility to accommodate your personal school exams, assignments, and holidays:</p>
+<ul class="bullet-list">
+<li><strong>Submission Flexibility:</strong> Students have the freedom to submit more or fewer individual project assets depending on their monthly availability.</li>
+<li><strong>Graduation Requirement:</strong> To successfully graduate from the program and receive your official certificate, you must actively contribute to at least 6 complete projects across the 6-month cycle.</li>
+<li><strong>The Review Rule:</strong> Before any content goes live, it must enter a mandatory, text-based peer review window where all 5 team members log in independently to cross-check facts and sign off on edits.</li>
+</ul>
+</section>
+<!-- SECTION 3: Admissions & Early Protocol -->
+<section class="info-section">
+<h2>📈 3. Verifiable Portfolio Gains & University Admissions Protocol</h2>
+<p>By maintaining consistency across this 6-month cycle and collaborating with a diverse group of global peers, you will exit the program with highly disciplined project management skills, a vast international network, and a robust, verified portfolio of published research—a critical advantage for competitive university applications.</p>
+<h3>⚡ Exceptional Case Protocol (Early Graduation)</h3>
+<p>We recognize that college application timelines vary globally. In exceptional cases where a student needs to include their verified SPONA credentials on a CV for imminent university admissions, early graduation is permitted.</p>
+<ul class="bullet-list">
+<li><strong>Requirements:</strong> The student can still complete the work at their own pace, but must contribute to a minimum of 3 complete projects.</li>
+<li><strong>Mandatory Action:</strong> The student must notify their supervisor prior to their university admissions deadline so the supervisor can contact Headquarters (HQ) for formal registry verification and expedite the early graduation documentation.</li>
+</ul>
+</section>
+<!-- 🔓 STATE 1: Active Registration Module Frame -->
+<div id="application-active-window">
+<h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 12px;">Active Registration Module</h2>
+<p style="color: var(--text-muted, #64748b); font-size: 0.95rem;">Complete the international entry form below. Applications for this cycle will close strictly on <strong>August 25th at 23:59 UTC</strong>.</p>
+<!-- Live Embedded Form Window Frame -->
+<iframe class="form-frame-holder" src="https://google.com">Loading application platform...</iframe>
+</div>
+<!-- 🔒 STATE 2: Closed Application Fallback Screen -->
+<div id="application-closed-window" class="countdown-banner">
+<div style="font-size: 2.5rem; margin-bottom: 16px;">⏳</div>
+<h3 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 8px;">Admissions Term Paused</h3>
+<p style="color: var(--text-muted, #64748b); max-width: 550px; margin: 0 auto 20px auto;">This global research initiative runs on bi-annual development setups. Registrations launch natively every August. Enter your email via our standard channels to monitor incoming updates.</p>
+<a href="contact.html" class="action-btn" style="font-size: 0.85rem; padding: 10px 24px; text-decoration: none; background: #0f172a; color: #ffffff; border-radius: 4px; display: inline-block;">Get Notified Via Email</a>
+</div>
+</main>
+<footer>
+<p style="text-align: center; margin-top: 40px; color: var(--text-muted, #64748b); font-size: 0.9rem;">© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const TESTING_MODE = true;
+const today = new Date();
+const currentMonth = today.getUTCMonth();
+const currentDate = today.getUTCDate();
+const statusPill = document.getElementById('live-status-pill');
+const activeWindow = document.getElementById('application-active-window');
+const closedWindow = document.getElementById('application-closed-window');
+if (TESTING_MODE || (currentMonth === 7 && currentDate <= 25)) {
+statusPill.textContent = "Admissions Active";
+statusPill.style.background = "#f0fdf4";
+statusPill.style.color = "#16a34a";
+statusPill.style.borderColor = "#bbf7d0";
+activeWindow.style.display = "block";
+} else {
+statusPill.textContent = "Applications Closed";
