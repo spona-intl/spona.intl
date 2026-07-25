@@ -22,9 +22,47 @@ body {
   color: var(--text-display);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* NEW ADDITION: Enables fluid background shifts behind your text overlay */
+  transition: background-color 3s ease-in-out;
 }
 
-/* 🧭 Navigation Header Structure */
+/* NEW ADDITION: Top Horizontal Moving Announcement Banner */
+.top-announcement-banner {
+  background-color: var(--brand-dark);
+  color: #ffffff;
+  overflow: hidden;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  z-index: 1001;
+}
+
+.banner-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-banner 20s linear infinite;
+}
+
+.banner-track span {
+  padding: 0 40px;
+  display: inline-block;
+}
+
+/* NEW ADDITION: Infinite Scroll Animation Keyframes */
+@keyframes scroll-banner {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Navigation Header Structure */
 nav {
   position: sticky;
   top: 0;
@@ -50,7 +88,7 @@ nav {
   font-size: 1.6rem;
   color: #000000;
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
   flex-shrink: 0;
 }
 
@@ -70,14 +108,13 @@ nav {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 4px;
-  
   /* Hides scrollbars universally */
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  -ms-overflow-style: none; /* IE Edge */
 }
 
 .nav-links::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; /* Chrome Safari Opera */
 }
 
 .nav-links li {
@@ -85,7 +122,7 @@ nav {
   display: inline-block;
 }
 
-/* Pill-Style Links */
+/* Pill Style Links */
 .nav-links a {
   text-decoration: none;
   color: #475569;
@@ -102,13 +139,13 @@ nav {
   background-color: #f8fafc;
 }
 
-.nav-links a.active {
+.nav-links a:active {
   color: #0f172a;
   background-color: var(--brand-accent-bg);
   border-color: var(--brand-accent-border);
 }
 
-/* 🏛️ Layout Framing */
+/* Layout Framing */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -128,7 +165,7 @@ nav {
   color: var(--text-display);
   max-width: 900px;
   margin: 0 auto 24px auto;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
 }
 
 .hero-wrapper p {
@@ -177,7 +214,7 @@ nav {
   background-color: #334155;
 }
 
-/* 🎞️ Horizontal Scrolling Display Grid */
+/* Horizontal Scrolling Display Grid */
 .publication-runway-section {
   margin-top: 80px;
 }
@@ -236,7 +273,7 @@ nav {
 }
 
 .scroll-item-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px); /* Moves up subtly on hover instead of snapping down */
   border-color: var(--text-display);
 }
 
@@ -324,7 +361,7 @@ nav {
 
 .list-item-card:hover {
   border-color: var(--text-display);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
 }
 
 .list-item-card h3 {
