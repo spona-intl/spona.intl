@@ -28,7 +28,6 @@ body {
 
 /* NEW ADDITION: Top Horizontal Moving Announcement Banner */
 .top-announcement-banner {
-  /* Updated Option 2 with complete background layering constraints */
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
   background-size: 100% 100%;
   color: #f8fafc !important;
@@ -47,7 +46,6 @@ body {
 .banner-track {
   display: inline-block;
   white-space: nowrap;
-  /* Uses a clear infinite animation path */
   animation: scroll-banner 20s linear infinite;
 }
 
@@ -59,7 +57,6 @@ body {
 /* NEW ADDITION: Infinite Scroll Animation Keyframes */
 @keyframes scroll-banner {
   0% {
-    /* Uses hardware acceleration to prevent background tearing on GitHub Pages */
     transform: translate3d(0, 0, 0);
   }
   100% {
@@ -392,4 +389,11 @@ footer {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: 80px;
+}
+
+/* NEW ADDITION: Smooth Scroll Fade Configuration */
+.fade-on-scroll {
+  opacity: 1;
+  transition: opacity 0.15s ease-out;
+  will-change: opacity; /* Optimizes browser rendering performance */
 }
