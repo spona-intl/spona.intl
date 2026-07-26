@@ -391,11 +391,11 @@ footer {
   margin-top: 80px;
 }
 
-/* Slower, ultra-smooth premium fade animation */
-@keyframes structuralFadeIn {
+/* Slower, ultra-smooth premium reveal animation */
+@keyframes universalFadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px); /* Slightly deeper movement for a dramatic look */
+    transform: translateY(16px); /* Elegant upward drift */
   }
   to {
     opacity: 1;
@@ -403,24 +403,22 @@ footer {
   }
 }
 
-/* Base state for all animated containers and independent images/emojis */
-nav,
-.hero-wrapper,
-.hero-wrapper h1 img, /* Targets images inside your hero headers */
-.hero-wrapper h1 i,   /* Targets icons inside your hero headers */
-.editorial-card,
-.publication-runway-section,
-.editorial-grid,
-footer {
+/* Force every single child element inside your body to fade */
+/* Excluding the nav element so it stays instantly functional */
+body > *:not(nav), 
+.container *, 
+.hero-wrapper *, 
+.editorial-card *, 
+.publication-runway-section *, 
+.editorial-grid * {
   opacity: 0;
-  /* Increased duration from 1s to 1.6s for a relaxed, luxury brand speed */
-  animation: structuralFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* 1.8 seconds duration makes the fade incredibly slow, soft, and premium */
+  animation: universalFadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Stretched out delays to let the user process each section layout */
-nav { animation-delay: 0.1s; }
-.hero-wrapper { animation-delay: 0.4s; }
-.editorial-card { animation-delay: 0.7s; }
+/* Staggering the main structural sections so they still flow top-to-bottom */
+.hero-wrapper { animation-delay: 0.2s; }
+.editorial-card { animation-delay: 0.6s; }
 .publication-runway-section { animation-delay: 1.0s; }
-.editorial-grid { animation-delay: 1.3s; }
-footer { animation-delay: 1.6s; }
+.editorial-grid { animation-delay: 1.4s; }
+footer { animation-delay: 1.8s; }
