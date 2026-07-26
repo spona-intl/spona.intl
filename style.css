@@ -391,11 +391,11 @@ footer {
   margin-top: 80px;
 }
 
-/* Optimized Global Fade Animation */
+/* Slower, ultra-smooth premium fade animation */
 @keyframes structuralFadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(12px); /* Slightly deeper movement for a dramatic look */
   }
   to {
     opacity: 1;
@@ -403,21 +403,24 @@ footer {
   }
 }
 
-/* Base state for animated components */
+/* Base state for all animated containers and independent images/emojis */
 nav,
 .hero-wrapper,
+.hero-wrapper h1 img, /* Targets images inside your hero headers */
+.hero-wrapper h1 i,   /* Targets icons inside your hero headers */
 .editorial-card,
 .publication-runway-section,
 .editorial-grid,
 footer {
   opacity: 0;
-  animation: structuralFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* Increased duration from 1s to 1.6s for a relaxed, luxury brand speed */
+  animation: structuralFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Perfect sequential staging order from top to bottom */
-nav { animation-delay: 0.05s; }
-.hero-wrapper { animation-delay: 0.15s; }
-.editorial-card { animation-delay: 0.25s; }
-.publication-runway-section { animation-delay: 0.35s; }
-.editorial-grid { animation-delay: 0.45s; }
-footer { animation-delay: 0.55s; }
+/* Stretched out delays to let the user process each section layout */
+nav { animation-delay: 0.1s; }
+.hero-wrapper { animation-delay: 0.4s; }
+.editorial-card { animation-delay: 0.7s; }
+.publication-runway-section { animation-delay: 1.0s; }
+.editorial-grid { animation-delay: 1.3s; }
+footer { animation-delay: 1.6s; }
