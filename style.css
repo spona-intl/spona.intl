@@ -391,9 +391,33 @@ footer {
   margin-top: 80px;
 }
 
-/* NEW ADDITION: Smooth Scroll Fade Configuration */
-.fade-on-scroll {
-  opacity: 1;
-  transition: opacity 0.15s ease-out;
-  will-change: opacity; /* Optimizes browser rendering performance */
+/* Optimized Global Fade Animation */
+@keyframes structuralFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+/* Base state for animated components */
+nav,
+.hero-wrapper,
+.editorial-card,
+.publication-runway-section,
+.editorial-grid,
+footer {
+  opacity: 0;
+  animation: structuralFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Perfect sequential staging order from top to bottom */
+nav { animation-delay: 0.05s; }
+.hero-wrapper { animation-delay: 0.15s; }
+.editorial-card { animation-delay: 0.25s; }
+.publication-runway-section { animation-delay: 0.35s; }
+.editorial-grid { animation-delay: 0.45s; }
+footer { animation-delay: 0.55s; }
