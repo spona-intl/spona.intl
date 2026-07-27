@@ -17,39 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. STAGGERED REVEAL TRIGGER ENGINE
+  // 2. DIRECT-TRIGGER 2D OBSERVER ENGINE
   // ==========================================
   const targetElements = document.querySelectorAll(
     ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card"
   );
 
-  let revealQueue = [];
-  let revealTimeout = null;
-
-  function processQueue() {
-    revealQueue.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add("is-visible");
-      }, index * 150); // 150ms delay between item entrances
-    });
-    revealQueue = [];
-    revealTimeout = null;
-  }
-
   const scrollObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        revealQueue.push(entry.target);
+        // Direct execution: flips the visibility class instantly
+        entry.target.classList.add("is-visible");
         observer.unobserve(entry.target); 
-
-        if (!revealTimeout) {
-          revealTimeout = setTimeout(processQueue, 40);
-        }
       }
     });
   }, {
     root: null, 
-    rootMargin: "0px 0px -20px 0px", // Triggers right as elements break the bottom fold
+    rootMargin: "0px 0px -40px 0px", // Activates comfortably as items cross into view
     threshold: 0.01 
   });
 
