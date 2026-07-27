@@ -430,3 +430,66 @@ footer {
   opacity: 1; /* 100% Opacity */
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   Language Switcher Component
+   ========================================================================== */
+
+/* Wrapper to hold the dropdown inside the flex navbar container */
+.lang-switcher-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Keeps it from crushing on small screen widths */
+}
+
+/* Styled select element to match your layout's pill styles */
+.lang-select {
+  appearance: none; /* Removes standard blocky browser styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--bg-card);
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 32px 8px 16px; /* Extra right padding leaves room for custom arrow */
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px; /* Clean rounded pill structure */
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+  /* Minimal down-arrow design using a data URI SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+/* Hover active feedback states */
+.lang-select:hover {
+  color: var(--text-display);
+  border-color: var(--brand-accent-border);
+  background-color: #f8fafc;
+}
+
+.lang-select:focus {
+  outline: none;
+  border-color: var(--text-display);
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.05);
+}
+
+/* Dark layout overrides specifically for dropdown list options */
+.lang-select option {
+  background-color: var(--bg-card);
+  color: var(--text-display);
+  font-weight: normal;
+}
+
+/* Responsive adjustment for compact screens */
+@media (max-width: 640px) {
+  .lang-select {
+    padding: 6px 24px 6px 12px;
+    font-size: 0.8rem;
+    background-position: right 8px center;
+    background-size: 10px;
+  }
+}
