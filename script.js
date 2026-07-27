@@ -1,26 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-   // ==========================================================================
-  // FEATURE 3: CONTINUOUS VIEWPORT OBSERVER (PERMANENT SCROLL REVEAL ENGINE)
+  // ==========================================================================
+  // FEATURE 1: DUAL-DIRECTION CONTINUOUS SCROLL OBSERVER (UP & DOWN FADE)
   // ==========================================================================
   const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      // Direct bounding check: triggers class toggles on both viewport entry and exit bounds
       if (entry.isIntersecting) {
-        // Element has entered the screen fold: execute the slow fade up
         entry.target.classList.add("is-visible");
       } else {
-        // Element has exited the screen fold: reset styles back to hidden state
         entry.target.classList.remove("is-visible");
       }
     });
   }, {
     root: null, 
-    // Triggers slightly inside the viewport window folds to catch the eye beautifully
-    rootMargin: "-20px 0px -40px 0px", 
-    threshold: 0.05 // Requires 5% element visibility before changing states
+    // FIX: Strict symmetric vertical margins (-80px top and bottom) 
+    // This forces elements to fade out the moment they roll past either edge of the screen
+    rootMargin: "-80px 0px -80px 0px", 
+    // FIX: Using multiple thresholds ensures smooth tracking transitions across frames
+    threshold: [0.0, 0.1] 
   });
 
-  // Automatically find and track all major layout components on your canvas map
+  // Automatically track major semantic modules on the canvas page map
   const targetElements = document.querySelectorAll(
     ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, footer"
   );
