@@ -419,3 +419,63 @@ footer {
     transition: none !important;
   }
 }
+
+
+/* ==========================================================================
+   Sleek Minimalist Language Selector with Custom Icon
+   ========================================================================== */
+.lang-switcher-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.lang-switcher-wrapper:hover {
+  background-color: #f8fafc; /* Subtle pill background appearance on hover */
+}
+
+/* Styles your custom SVG globe graphic */
+.lang-icon {
+  width: 16px;
+  height: 16px;
+  color: #64748b; /* Matches your --text-muted token slate tone */
+  pointer-events: none; /* Prevents click interception clicks passing straight into select menu */
+  flex-shrink: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.lang-switcher-wrapper:hover .lang-icon {
+  color: #0f172a; /* Darkens on wrapper hover states */
+}
+
+/* Strips default browser engine select borders completely */
+.lang-select {
+  border: none !important;
+  background: transparent !important;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  padding-right: 14px; /* Space for tiny native arrow if supported or needed */
+  outline: none;
+  appearance: none; /* Crucial override to drop old layout styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.lang-select:hover {
+  color: #0f172a;
+}
+
+/* Ensure clean display overrides inside options panels layout box */
+.lang-select option {
+  background-color: var(--bg-card);
+  color: var(--text-display);
+}
