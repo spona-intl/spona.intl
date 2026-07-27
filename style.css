@@ -595,37 +595,4 @@ footer {
 }
 
 
-/* ==========================================================================
-   High-Visibility Fixed Search Component Lane (100% Visible & Stationary)
-   ========================================================================== */
-.search-bar {
-  /* Isolate position calculations from scrolling animation-timeline parents */
-  position: fixed !important;
-  top: 73px !important; 
-  left: 50% !important;
-  transform: translateX(-50%) !important; 
-  
-  width: calc(100% - 40px) !important;
-  max-width: 810px !important; 
-  z-index: 995 !important; 
-  
-  /* FIX: Forces search field to remain completely locked at full visibility layer */
-  opacity: 1 !important; 
-  animation: none !important; 
-  
-  /* Frosted backing profile layout blocks */
-  background-color: rgba(252, 252, 253, 0.98) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-}
-
-/* Pad offset blocks scrolling card entries from sliding underneath pre-hidden spaces */
-#noResultsMessage, #resourceRegistry {
-  margin-top: 110px !important;
-  position: relative;
-  z-index: 10;
-}
 
