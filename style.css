@@ -398,36 +398,28 @@ footer {
     transform: translateY(45px);
   }
   to {
-    opacity: 1;
+    opacity: 1; /* 100% Opacity */
     transform: translateY(0);
   }
 }
 
-.hero-wrapper,
-.editorial-card,
-.publication-runway-section,
-.editorial-grid,
-.list-item-card,
-.grid-block,
-footer {
-  opacity: 1; 
+/* Fallback: Elements are 100% visible if the browser doesn't support scroll-driven animations */
+.hero-wrapper, .editorial-card, .publication-runway-section, .editorial-grid, .list-item-card, .grid-block, footer {
+  opacity: 1;
 }
 
+/* Modern Browser Setup */
 @supports (animation-timeline: view()) {
-  .hero-wrapper,
-  .editorial-card,
-  .publication-runway-section,
-  .editorial-grid,
-  .list-item-card,
-  .grid-block,
-  footer {
-    opacity: 0;
-    animation: scrollFadeIn linear forwards;
+  .hero-wrapper, .editorial-card, .publication-runway-section, .editorial-grid, .list-item-card, .grid-block, footer {
+    opacity: 0; 
+    animation: scrollFadeIn linear forwards; /* 'forwards' keeps the 100% opacity state active */
     animation-timeline: view();
-    animation-range: entry 5% exit 60%;
+    /* FIX: Finishes the 100% fade-in completely within the entry window */
+    animation-range: entry 10% entry 70%; 
   }
 }
 
+/* JavaScript Fallback Setup */
 .js-reveal {
   opacity: 0;
   transform: translateY(45px);
@@ -435,6 +427,6 @@ footer {
 }
 
 .js-reveal.active {
-  opacity: 1;
+  opacity: 1; /* 100% Opacity */
   transform: translateY(0);
 }
