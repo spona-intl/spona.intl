@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | Events</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="events_page_title">SPONA Intl. | Events</title>
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="events.html" class="active">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+      
+      <!-- Right-aligned horizontal links and language select container wrapper -->
+      <div style="display: flex; align-items: center; gap: 16px; overflow: hidden;">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+          <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
+          <li><a href="events.html" class="active" data-i18n="nav_events">Events</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <!-- Permanent Language Selector Menu Placement Component -->
+        <div class="lang-switcher-wrapper">
+          <!-- SVG Globe Icon Embedded Directly for Maximum Performance -->
+          <svg class="lang-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          
+          <select id="languageSelect" class="lang-select">
+            <option value="en" selected>EN</option>
+            <option value="zh-TW">繁中</option>
+            <option value="hi">हिन्दी</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ru">RU</option>
+            <option value="fil">FIL</option>
+          </select>
         </div>
-    </nav>
+      </div>
 
-    <main class="container" style="max-width: 850px;">
-        <div class="hero-wrapper" style="text-align: left;">
-            <div class="status-pill">Symposia Schedules</div>
-            <h1 style="text-align: left; margin: 0 0 16px 0;">Global Academic Assemblies</h1>
-            <p style="text-align: left;">Track global onboarding cycles, open science symposia, and upcoming peer-led review workshops.</p>
-        </div>
+    </div>
+  </nav>
 
-        <div class="list-item-card" style="border-left: 3px solid var(--text-display);">
-            <div style="margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">UPCOMING SEMINAR</div>
-            <h3>Global Youth Neuroscience Seminar 2026</h3>
-            <p style="margin-bottom: 16px;"><strong>Timeline Schedule:</strong> October 14, 2026 @ 15:00 UTC</p>
-            <p style="margin-bottom: 24px;">An international digital assembly where core research analysts and team branches share dynamic updates regarding ongoing collaborative modules.</p>
-            <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 10px 24px; font-size: 0.85rem;">Access Digital Assembly</a>
-        </div>
-    </main>
+  <main class="container" style="max-width: 850px;">
+    <div class="hero-wrapper" style="text-align: left;">
+      <div class="status-pill" data-i18n="events_badge">Symposia Schedules</div>
+      <h1 style="text-align: left; margin: 0 0 16px 0;" data-i18n="events_heading">Global Academic Assemblies</h1>
+      <p style="text-align: left;" data-i18n="events_subheading">Track global onboarding cycles, open science symposia, and upcoming peer-led review workshops.</p>
+    </div>
 
-    <footer>
-        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
-    </footer>
+    <div class="list-item-card" style="border-left: 3px solid var(--text-display);">
+      <div style="margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)" data-i18n="event_card_tag">UPCOMING SEMINAR</div>
+      <h3 data-i18n="event_card_title">Global Youth Neuroscience Seminar 2026</h3>
+      <p style="margin-bottom: 16px;">
+        <strong data-i18n="event_card_timeline_label">Timeline Schedule:</strong> <span data-i18n="event_card_timeline_value">October 14, 2026 @ 15:00 UTC</span>
+      </p>
+      <p style="margin-bottom: 24px;" data-i18n="event_card_description">An international digital assembly where core research analysts and team branches share dynamic updates regarding ongoing collaborative modules.</p>
+      <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 10px 24px; font-size: 0.85rem;" data-i18n="event_card_btn">Access Digital Assembly</a>
+    </div>
+  </main>
 
+  <footer>
+    <p data-i18n="footer_text">© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+  </footer>
+
+  <!-- Connect your fixed global layout script engine -->
+  <script src="script.js?v=2"></script>
 </body>
 </html>
