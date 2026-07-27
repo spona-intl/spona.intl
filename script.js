@@ -1,26 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
   
+   // ==========================================================================
+  // FEATURE 3: CONTINUOUS VIEWPORT OBSERVER (PERMANENT SCROLL REVEAL ENGINE)
   // ==========================================================================
-  // FEATURE 1: PERSISTENT NAV SCROLL STATE (LOCK HORIZONTAL POSITION)
-  // ==========================================================================
-  const navLinksContainer = document.querySelector(".nav-links");
-
-  if (navLinksContainer) {
-    // Check if a layout scroll coordinate was stored in memory on the previous page
-    const savedScrollPosition = sessionStorage.getItem("navScrollLeft");
-    if (savedScrollPosition) {
-      // Instantly force the navbar container to stay where the user left it
-      navLinksContainer.scrollLeft = parseInt(savedScrollPosition, 10);
-    }
-
-    // Watch for link clicks to save the position before the fresh page loads
-    navLinksContainer.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        sessionStorage.setItem("navScrollLeft", navLinksContainer.scrollLeft);
-      });
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Element has entered the screen fold: execute the slow fade up
+        entry.target.classList.add("is-visible");
+      } else {
+        // Element has exited the screen fold: reset styles back to hidden state
+        entry.target.classList.remove("is-visible");
+      }
     });
-  }
+  }, {
+    root: null, 
+    // Triggers slightly inside the viewport window folds to catch the eye beautifully
+    rootMargin: "-20px 0px -40px 0px", 
+    threshold: 0.05 // Requires 5% element visibility before changing states
+  });
 
+  // Automatically find and track all major layout components on your canvas map
+  const targetElements = document.querySelectorAll(
+    ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, footer"
+  );
+  
+  targetElements.forEach(element => {
+    element.classList.add("reveal-on-scroll");
+    scrollObserver.observe(element);
+  });
+
+
+  
   // ==========================================================================
   // FEATURE 2: DYNAMIC 10+ LANGUAGE SWITCHING INTERNATIONALIZATION ENGINE
   // ==========================================================================
