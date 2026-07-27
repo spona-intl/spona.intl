@@ -392,27 +392,31 @@ footer {
 }
 
 /* ==========================================================================
-   Hardware-Accelerated Fluid Scroll-Focus Matrix
+   High-Visibility Fluid Scroll-Focus Matrix (Enhanced 2D Planes)
    ========================================================================== */
 
-/* 1. Set up the baseline native animation rules */
+/* Define a crisp, highly prominent 2D entrance */
 @keyframes dynamicFocusSweep {
   0% {
-    opacity: 0.6;
-    transform: translateY(20px) scale(0.97);
+    /* HIGH VISIBILITY CHANGE: Dropped to 30% opacity and shifted lower by 60px */
+    opacity: 0.3;
+    transform: translateY(60px) scale(0.95);
   }
-  /* Perfect 100% focus peak right when the element crosses the middle of the screen */
+  
+  /* Elements lock into sharp focus across the middle 30% of the screen viewport */
   35%, 65% {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+  
   100% {
-    opacity: 0.6;
-    transform: translateY(-20px) scale(0.97);
+    /* HIGH VISIBILITY CHANGE: Fades cleanly down to 30% opacity as it rolls out the top */
+    opacity: 0.3;
+    transform: translateY(-60px) scale(0.95);
   }
 }
 
-/* 2. Bind the timeline directly onto your structural page components */
+/* Bind the timeline directly onto your structural page components */
 .hero-wrapper h1, 
 .hero-wrapper p, 
 .status-pill, 
@@ -423,12 +427,10 @@ section,
 .list-item-card, 
 .search-bar, 
 footer {
-  /* Failsafe default layout values if the viewport isn't moving */
-  opacity: 1;
   will-change: opacity, transform;
 }
 
-/* 3. Modern Browser Core Setup: Binds the animation directly to the scroll view */
+/* Modern Browser Core Setup: Binds the animation directly to the scroll view */
 @supports (animation-timeline: view()) {
   .hero-wrapper h1, 
   .hero-wrapper p, 
@@ -440,15 +442,15 @@ footer {
   .list-item-card, 
   .search-bar, 
   footer {
-    opacity: 0.6;
+    opacity: 0.3;
     animation: dynamicFocusSweep linear both;
     animation-timeline: view();
-    /* Triggers the entry phase right as items cross the browser boundaries */
+    /* Tracking window calculations encompass the full viewport space area boundaries */
     animation-range: entry 0% exit 100%;
   }
 }
 
-/* 4. Accessibility bypass */
+/* Accessibility bypass */
 @media (prefers-reduced-motion: reduce) {
   @supports (animation-timeline: view()) {
     .hero-wrapper h1, .hero-wrapper p, .status-pill, section, .editorial-card, .scroll-item-card, .grid-block, .list-item-card, .search-bar, footer {
@@ -458,7 +460,6 @@ footer {
     }
   }
 }
-
 
 
 
