@@ -651,17 +651,24 @@ footer {
 }
 
 /* ==========================================================================
-   High-Visibility Sticky Search Component
+   Stationary Fixed Position Search Bar
    ========================================================================== */
 .search-bar {
-  /* Locks the element inline directly below your navigation bar */
-  position: sticky !important;
-  top: 73px !important; 
-  z-index: 990 !important; /* Layers safely above scrolling card elements */
-  opacity: 1 !important;
-  animation: none !important; /* Excludes the bar from scroll-fade timelines */
+  /* FIX: Using fixed isolates the input element from parent scroll timelines */
+  position: fixed !important;
+  top: 73px !important; /* Positions it directly below your navigation bar fold */
+  left: 50% !important;
+  transform: translateX(-50%) !important; /* Centers the input panel perfectly */
   
-  /* Modern frosted-glass background panel to hide cards rolling behind it */
+  width: calc(100% - 40px) !important;
+  max-width: 810px !important; /* Matches your 850px content container lines */
+  z-index: 995 !important; /* Floats safely on top of the scrolling list cards */
+  
+  /* Forces the input field to remain visible and ignores view animations */
+  opacity: 1 !important;
+  animation: none !important;
+  
+  /* Elegant frosted glass backing card style */
   background-color: rgba(252, 252, 253, 0.98) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
@@ -670,10 +677,10 @@ footer {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
 }
 
-/* Structural stacking context order fallback framework */
+/* FIX: Adds an offset spacer so cards do not start hidden behind the fixed bar */
+#noResultsMessage, 
 #resourceRegistry {
+  margin-top: 110px !important;
   position: relative;
   z-index: 10;
 }
-
-
