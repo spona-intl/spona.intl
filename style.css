@@ -1,13 +1,13 @@
 :root {
-  --bg-main: #f8fafc;            /* Crisp, Modern Off-White */
-  --bg-card: #ffffff;            /* Pure White Panels */
-  --border-subtle: #e2e8f0;      /* Soft Slate Gray Dividers */
-  --text-display: #0f172a;       /* Deep Imperial Navy/Charcoal */
-  --text-muted: #475569;         /* Readable Slate Subtitles */
-  --brand-dark: #1d4ed8;         /* Energetic Sapphire Blue Accent */
-  --brand-accent-bg: #eff6ff;    /* Premium Soft Ice Blue Accent */
-  --brand-accent-text: #1e40af;  /* Professional Indigo Highlight */
-  --brand-accent-border: #bfdbfe;/* Clean Soft Blue Outlines */
+  --bg-main: #f8fafc;            /* Crisp Laboratory Off-White */
+  --bg-card: #ffffff;            /* Pure White Dynamic Cards */
+  --border-subtle: #e2e8f0;      /* Clean Minimal Component Dividers */
+  --text-display: #0f172a;       /* Deep Slate Navy (High Contrast Header) */
+  --text-muted: #334155;         /* Highly Legible Body Secondary Slate */
+  --brand-dark: #2563eb;         /* High-Voltage Synapse Sapphire Blue */
+  --brand-accent-bg: #eff6ff;    /* Premium Ice Blue Active Highlight Tints */
+  --brand-accent-text: #1d4ed8;  /* Professional Focus Link Indigo */
+  --brand-accent-border: #bfdbfe;/* Soft Structural Outline Accents */
 }
 
 
@@ -29,14 +29,14 @@ body {
 
 /* NEW ADDITION: Top Horizontal Moving Announcement Banner */
 .top-announcement-banner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1d4ed8 100%) !important;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%) !important;
   background-size: 100% 100%;
   color: #ffffff !important;
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
   overflow: hidden;
   padding: 12px 0;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.7px;
   white-space: nowrap;
   position: relative;
@@ -91,14 +91,13 @@ nav {
 
 /* Logo branding layout element placement styles */
 .nav-logo {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 800;
   font-size: 1.6rem;
   color: var(--text-display);
   text-decoration: none;
-  letter-spacing: 0.5px;
-  flex-shrink: 0; 
-  /* Keeps logo from crushing down on tiny screens */
+  letter-spacing: -0.5px; /* Premium corporate optical tracking */
+  flex-shrink: 0; /* Keeps logo from crushing down on tiny screens */
 }
 
 
@@ -163,7 +162,7 @@ nav {
 
 .nav-links a:hover {
   color: var(--text-display);
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(15, 23, 42, 0.04);
 }
 
 .nav-links a.active,
@@ -202,15 +201,17 @@ nav {
 }
 
 .hero-wrapper h1 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
   color: var(--text-display);
   max-width: 900px;
   margin: 0 auto 24px auto;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px; 
+  /* Sharp visual weight hierarchy placement */
 }
+
 
 .hero-wrapper p {
   font-size: 1.15rem;
@@ -238,8 +239,8 @@ nav {
   margin: 40px auto;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
   padding: 60px 50px;
   text-align: center;
 }
@@ -253,15 +254,15 @@ nav {
   font-size: 0.95rem;
   padding: 14px 32px;
   border-radius: 6px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .action-btn:hover {
-  background-color: #1e40af;
-  transform: translateY(-1px);
+  background-color: var(--brand-accent-text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
 }
-
 
 /* Horizontal Scrolling Display Grid */
 .publication-runway-section {
@@ -278,9 +279,10 @@ nav {
 }
 
 .section-meta-header h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .scroll-indicator-text {
@@ -313,27 +315,28 @@ nav {
   scroll-snap-align: start;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.02);
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-item-card:hover {
-  transform: translateY(-4px); /* Moves up subtly on hover instead of snapping down */
+  transform: translateY(-6px); /* Moves up fluidly on hover instead of snapping down */
   border-color: var(--brand-dark);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
 }
 
 .scroll-item-card h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   margin: 16px 0 8px 0;
+  letter-spacing: -0.3px;
 }
 
 
@@ -354,9 +357,10 @@ nav {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--brand-dark);
+  letter-spacing: 0.5px;
 }
 
 .card-contributor-footer {
@@ -378,17 +382,20 @@ nav {
 .grid-block {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.02);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
   padding: 40px;
+  transition: border-color 0.2s ease;
 }
 
 .grid-block h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 12px;
+  letter-spacing: -0.5px;
 }
+
 
 
 .grid-block p {
@@ -414,27 +421,30 @@ nav {
 .list-item-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 32px;
   margin-bottom: 20px;
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
+  transition: all 0.25s ease;
 }
 
 .list-item-card:hover {
   border-color: var(--brand-dark);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
 }
 
 .list-item-card h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-display);
   margin-bottom: 8px;
+  letter-spacing: -0.3px;
 }
+
 
 
 .disclaimer-text {
@@ -461,18 +471,18 @@ footer {
 /* Define a crisp, highly prominent 2D entrance */
 @keyframes dynamicFocusSweep {
   0% {
-    opacity: 0.6;
-    transform: translateY(30px);
+    opacity: 0.4;
+    transform: translateY(40px) scale(0.98);
   }
   35%, 65% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   100% {
     opacity: 0.95; 
     
-    /* FIXED: Keeps panels completely legible when they roll near top boundaries */
-    transform: translateY(-10px);
+    /* FIXED: Ensures cards maintain perfect legible visibility and layout tracking at top folds */
+    transform: translateY(-10px) scale(1);
   }
 }
 
@@ -540,7 +550,8 @@ footer {
 }
 
 .lang-switcher-wrapper:hover {
-  background-color: rgba(0, 0, 0, 0.04); /* Subtle pill background appearance on hover */
+  background-color: rgba(15, 23, 42, 0.04); 
+  /* Subtle pill background appearance on hover */
 }
 
 /* Styles your custom SVG globe graphic */
@@ -612,13 +623,14 @@ footer {
 }
 
 .lang-icon-btn svg {
-  width: 18px; /* Thinner and smaller dimension footprint */
+  width: 18px; 
+  /* Thinner and smaller dimension footprint */
   height: 18px;
 }
 
 .lang-icon-btn:hover {
   color: var(--text-display);
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(15, 23, 42, 0.04);
 }
 
 .lang-dropdown-menu {
@@ -628,12 +640,20 @@ footer {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   width: 160px;
   padding: 6px 0;
   display: flex;
   flex-direction: column;
   z-index: 2000; 
+  
+  /* Hidden default states ready for interaction triggers */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
   
   /* Hidden default states ready for interaction triggers */
   opacity: 0;
@@ -690,24 +710,19 @@ body, main, .container {
   /* DEFAULT DESKTOP CONFIGURATION: Sticks right below desktop navbar folder */
   position: sticky !important;
   top: 73px !important;
-  z-index: 990 !important; 
-  
-  /* Layers safely above moving resource list cards */
+  z-index: 990 !important; /* Layers safely above moving resource list cards */
   display: block;
   width: 100%;
   padding: 16px 20px;
   font-size: 1rem;
   color: var(--text-display);
   border: 1px solid var(--border-subtle);
-  border-radius: 6px;
+  border-radius: 8px;
   outline: none;
-  margin-bottom: 40px !important; 
-  
-  /* Forces search field to ignore background scroll-timeline fading actions */
+  margin-bottom: 40px !important; /* Forces search field to ignore background scroll-timeline fading actions */
   opacity: 1 !important;
   animation: none !important;
   will-change: transform;
-  
   /* Frosted glass backdrop overlay backing */
   background-color: rgba(248, 250, 252, 0.85) !important;
   backdrop-filter: blur(12px) !important;
