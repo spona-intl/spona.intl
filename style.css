@@ -651,19 +651,19 @@ footer {
 }
 
 /* ==========================================================================
-   High-Impact Native Sticky Search Component
+   High-Impact Native Sticky Search Component (Mobile-Responsive Fix)
    ========================================================================== */
 
-/* FIX: Removes parent constraints so the browser can calculate scroll thresholds */
+/* Removes structural constraints from all parent layers */
 body, main, .container {
   overflow: visible !important;
 }
 
 .search-bar {
-  /* STICKY CONFIGURATION: Rolls naturally with page, locks precisely below navbar */
+  /* DEFAULT DESKTOP CONFIGURATION: Sticks right below desktop navbar folder */
   position: sticky !important;
   top: 73px !important; 
-  z-index: 990 !important; /* Floats safely above scrolling card structures */
+  z-index: 990 !important; /* Layers safely above moving resource list cards */
   
   display: block;
   width: 100%;
@@ -674,12 +674,12 @@ body, main, .container {
   outline: none;
   margin-bottom: 40px !important;
   
-  /* Forces the field to remain fully visible, ignoring global scroll fade timelines */
+  /* Forces search field to ignore background scroll-timeline fading actions */
   opacity: 1 !important; 
   animation: none !important;
   will-change: transform;
   
-  /* Frosted glass backdrop backing makes scrolled list items look neat behind the input */
+  /* Frosted glass backdrop overlay backing */
   background-color: rgba(252, 252, 253, 0.98) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
@@ -692,13 +692,18 @@ body, main, .container {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
 }
 
-/* FIX: Resets hero spacing back to your clean original design parameters */
-.hero-wrapper {
-  margin-top: 0 !important;
+/* FIX FOR MOBILE: Adjusts the sticky trigger point to match the smaller mobile navbar height */
+@media (max-width: 640px) {
+  .search-bar {
+    top: 57px !important; /* Shifts threshold up to line up perfectly with your compact phone header */
+    padding: 12px 16px; /* Slightly more compact layout padding for small phone viewports */
+    font-size: 0.9rem;
+    margin-bottom: 24px !important;
+  }
 }
 
 #resourceRegistry {
   position: relative;
   z-index: 10;
-  margin-top: 0 !important; /* Clears old hard spacers */
+  margin-top: 0 !important;
 }
