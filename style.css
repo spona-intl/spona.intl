@@ -392,26 +392,20 @@ footer {
 }
 
 /* ==========================================================================
-   Continuous 2D Multi-Direction Fade Setup Block
+   High-Fidelity Dynamic Peripheral Focus Engine
    ========================================================================== */
 
-/* Default Initial Hidden Frame: Shifted down dynamically by 60px */
 .reveal-on-scroll {
-  opacity: 0 !important;
-  transform: translateY(60px) scale(0.98) !important;
-  /* PERMANENT FADE CONFIG: Slowed down to 1.6s for an elegant, cinematic sweep up and down */
-  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important, 
-              transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  /* Default Periphery State: Left at 60% opacity with a soft, clean layout position */
+  opacity: 0.6;
+  transform: scale(0.98);
+  /* Smoothly blends active scroll variations instantly without sudden clipping updates */
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-/* Activated Visible State: Fully restored to crisp, clean visibility dimensions */
-.reveal-on-scroll.is-visible {
-  opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
-}
-
-/* Accessibility bypass */
+/* Fallback protection for devices running accessibility accessibility reduced-motion parameters */
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {
     opacity: 1 !important;
