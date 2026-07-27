@@ -1,140 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   
   // ==========================================================================
-  // FEATURE 1: DUAL-DIRECTION CONTINUOUS SCROLL OBSERVER (UP & DOWN FADE)
-  // ==========================================================================
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Direct bounding check: triggers class toggles on both viewport entry and exit bounds
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      } else {
-        entry.target.classList.remove("is-visible");
-      }
-    });
-  }, {
-    root: null, 
-    // FIX: Strict symmetric vertical margins (-80px top and bottom) 
-    // This forces elements to fade out the moment they roll past either edge of the screen
-    rootMargin: "-80px 0px -80px 0px", 
-    // FIX: Using multiple thresholds ensures smooth tracking transitions across frames
-    threshold: [0.0, 0.1] 
-  });
-
-  // Automatically track major semantic modules on the canvas page map
-  const targetElements = document.querySelectorAll(
-    ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, footer"
-  );
-  
-  targetElements.forEach(element => {
-    element.classList.add("reveal-on-scroll");
-    scrollObserver.observe(element);
-  });
-
-
-  
-  // ==========================================================================
-  // FEATURE 2: DYNAMIC 10+ LANGUAGE SWITCHING INTERNATIONALIZATION ENGINE
-  // ==========================================================================
-  const languageSelect = document.getElementById("languageSelect");
-
-  // Asynchronously fetch JSON dictionary file from your GitHub locales/ folder
-  async function setLanguage(lang) {
-    try {
-      // Points dynamically to your GitHub repository layout path structure
-      const response = await fetch(`./locales/${lang}.json`);
-      
-      if (!response.ok) {
-        throw new Error(`Could not load language asset payload: ${lang}`);
-      }
-      
-      const translation = await response.json();
-
-      // Scan the entire document map for targets marked with matching data-i18n attributes
-      document.querySelectorAll("[data-i18n]").forEach(element => {
-        const key = element.getAttribute("data-i18n");
-        if (translation[key]) {
-          element.textContent = translation[key];
-        }
-      });
-
-      // Persist the preference locally so subpages load directly in this language
-      localStorage.setItem("preferredLanguage", lang);
-      if (languageSelect) languageSelect.value = lang;
-
-      // Update accessibility profile tag mapping for international SEO compliance
-      document.documentElement.lang = lang;
-
-    } catch (error) {
-      console.error("i18n Core Exception Fallback triggered:", error);
-      // Failsafe configuration: fall back onto native English baseline files
-      if (lang !== "en") setLanguage("en");
-    }
-  }
-
-  // Detect starting language configuration sequence: Preference > Browser settings > Default
-  const savedLang = localStorage.getItem("preferredLanguage");
-  const browserLang = navigator.language;
-  
-  // Isolate country region codes from basic browser locale signals
-  let defaultLang = "en";
-  if (savedLang) {
-    defaultLang = savedLang;
-  } else if (browserLang.startsWith("zh")) {
-    defaultLang = browserLang.includes("TW") || browserLang.includes("HK") ? "zh-TW" : "zh-CN";
-  } else {
-    defaultLang = browserLang.split("-")[0];
-  }
-
-  // Validate initialization choice against your portfolio of 10+ intended variants
-  const supportedLangs = ["en", "zh-TW", "hi", "es", "fr", "ru", "fil"];
-  if (!supportedLangs.includes(defaultLang)) {
-    defaultLang = "en";
-  }
-
-  // Execute initial translation layout sweep mapping sequence
-  if (languageSelect) {
-    setLanguage(defaultLang);
-
-    // Watch for active adjustments triggered by the user via the selector dropdown pill
-    languageSelect.addEventListener("change", (e) => {
-      setLanguage(e.target.value);
-    });
-  }
-
-  // ==========================================================================
-  // FEATURE 3: VIEWPORT OBSERVER (HIGH-VISIBILITY 2D SCROLL REVEAL ENGINE)
-  // ==========================================================================
-  const scrollObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Direct execution: flips the visibility class instantly
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target); 
-      }
-    });
-  }, {
-    root: null, 
-    rootMargin: "0px 0px -40px 0px", // Activates cleanly as items cross the screen fold
-    threshold: 0.01 
-  });
-
-  // Automatically find and track all major layout components on the page
-  const targetElements = document.querySelectorAll(
-    ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, footer"
-  );
-  
-  targetElements.forEach(element => {
-    // Add the starting class dynamically so your HTML files stay clean
-    element.classList.add("reveal-on-scroll");
-    scrollObserver.observe(element);
-  });
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  
-  // ==========================================================================
   // FEATURE 1: PERSISTENT NAV SCROLL STATE (LOCK HORIZONTAL POSITION)
   // ==========================================================================
   const navLinksContainer = document.querySelector(".nav-links");
@@ -157,37 +23,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const langDropMenu = document.getElementById("langDropMenu");
   const langMenuItems = document.querySelectorAll(".lang-menu-item");
 
-  // A. Click handler to toggle pop-up state panel visibility
   if (langMenuBtn && langDropMenu) {
     langMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // Stops immediate document body execution trigger
+      e.stopPropagation();
       langDropMenu.classList.toggle("is-open");
     });
-
-    // Automatically close panel if user clicks anywhere else on the screen layout
     document.addEventListener("click", () => {
       langDropMenu.classList.remove("is-open");
     });
   }
 
-  // B. Core Internationalization Dictionary Translation Loader Function
   async function setLanguage(lang) {
     try {
       const response = await fetch(`./locales/${lang}.json`);
       if (!response.ok) throw new Error(`Could not load translations file: ${lang}`);
       const translation = await response.json();
 
-      // Swap document text tokens
       document.querySelectorAll("[data-i18n]").forEach(element => {
         const key = element.getAttribute("data-i18n");
         if (translation[key]) element.textContent = translation[key];
       });
 
-      // Save user language configuration variables to memory strings
       localStorage.setItem("preferredLanguage", lang);
       document.documentElement.lang = lang;
 
-      // Update highlighted item layout classes inside floating selection row list
       langMenuItems.forEach(item => {
         if (item.getAttribute("data-lang-val") === lang) {
           item.classList.add("active");
@@ -195,22 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
           item.classList.remove("active");
         }
       });
-
     } catch (error) {
       console.error("i18n Core Exception:", error);
       if (lang !== "en") setLanguage("en");
     }
   }
 
-  // C. Map Click Listeners onto each target element button row option
   langMenuItems.forEach(item => {
     item.addEventListener("click", () => {
-      const selectedLang = item.getAttribute("data-lang-val");
-      setLanguage(selectedLang);
+      setLanguage(item.getAttribute("data-lang-val"));
     });
   });
 
-  // D. Initial Load Language Verification Routing Setup Sequence
   const savedLang = localStorage.getItem("preferredLanguage");
   const browserLang = navigator.language;
   let defaultLang = "en";
@@ -220,32 +75,36 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (browserLang.startsWith("zh")) {
     defaultLang = browserLang.includes("TW") || browserLang.includes("HK") ? "zh-TW" : "zh-CN";
   } else {
-    defaultLang = browserLang.split("-")[0];
+    defaultLang = browserLang.split("-");
   }
 
   const supportedLangs = ["en", "zh-TW", "hi", "es", "fr", "ru", "fil"];
   if (!supportedLangs.includes(defaultLang)) defaultLang = "en";
-
   setLanguage(defaultLang);
 
   // ==========================================================================
-  // FEATURE 3: VIEWPORT OBSERVER (HIGH-VISIBILITY 2D SCROLL REVEAL ENGINE)
+  // FEATURE 3: UNBOUNDED DUAL-DIRECTION TRANSITION REVEAL ENGINE (FIXED)
   // ==========================================================================
-  const scrollObserver = new IntersectionObserver((entries, observer) => {
+  const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      // Toggles class instantly on entry/exit bounding overlaps
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target); 
+      } else {
+        entry.target.classList.remove("is-visible");
       }
     });
   }, {
     root: null, 
-    rootMargin: "0px 0px -40px 0px",
-    threshold: 0.01 
+    // FIX: Using completely clear bounds (0px) ensures that long content pages 
+    // cleanly trigger element removal triggers the moment an element slips off either screen pole
+    rootMargin: "0px 0px -40px 0px", 
+    threshold: 0.02 // Tiny threshold prevents frames from getting trapped under fast momentum scrolling
   });
 
+  // FIX: Broad query matching profile selects every component across Home, About, and Resources
   const targetElements = document.querySelectorAll(
-    ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, footer"
+    ".hero-wrapper h1, .hero-wrapper p, .status-pill, section, .editorial-card, .scroll-item-card, .grid-block, .list-item-card, .search-bar, footer"
   );
   
   targetElements.forEach(element => {
