@@ -17,42 +17,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. AUTOMATIC BLANKET SCROLL REVEAL 
+  // 2. HIGH-VISIBILITY SCROLL REVEAL 
   // ==========================================
-  // Targets all content items automatically so you don't need manual classes
   const targetElements = document.querySelectorAll(
     ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card"
   );
 
-  // A. Set initial hidden states across your entire site layout
+  // A. Set dramatic starting positions
   targetElements.forEach(element => {
     element.style.opacity = "0";
-    element.style.transform = "translateY(30px)";
-    element.style.transition = "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+    // ENHANCED: Increased distance from 30px to 70px for a more obvious slide-up effect
+    element.style.transform = "translateY(70px)"; 
+    // ENHANCED: Extended duration to 1.8 seconds for a more visible, sweeping fade
+    element.style.transition = "opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)";
     element.style.willChange = "opacity, transform";
   });
 
-  // B. Setup the viewport tracking engine
+  // B. Setup the tracking engine
   const scrollObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
         
-        // requestAnimationFrame forces the browser to play the transition smoothly
         requestAnimationFrame(() => {
           el.style.opacity = "1";
           el.style.transform = "translateY(0)";
         });
         
-        observer.unobserve(el); // Locks at 100% permanent visibility
+        observer.unobserve(el); // Keeps elements locked at 100% visible
       }
     });
   }, {
     root: null, 
-    rootMargin: "0px 0px -20px 0px", // Triggers just as elements enter the screen bounds
+    // ENHANCED: Adjusted trigger area so elements wait a bit longer before fading in
+    rootMargin: "0px 0px -50px 0px", 
     threshold: 0.01 
   });
 
-  // C. Execute the tracking loop
+  // C. Execute tracking
   targetElements.forEach(element => scrollObserver.observe(element));
 });
