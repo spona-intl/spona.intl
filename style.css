@@ -64,11 +64,13 @@ body {
   }
 }
 
-/* Navigation Header Structure */ 
+/* ==========================================================================
+   Navigation Header Layout (Fixed Mobile Swipe Physics)
+   ========================================================================== */
 nav { 
   position: sticky; 
   top: 0; 
-  background-color: rgba(252, 252, 253, 0.9); 
+  background-color: rgba(252, 252, 253, 0.95); 
   border-bottom: 1px solid var(--border-subtle); 
   padding: 16px 20px; 
   z-index: 1000; 
@@ -85,86 +87,47 @@ nav {
   gap: 20px; 
 } 
 
-/* FIX: Forces the wrapper around your navigation list and language icon 
-   to display as a flexible row with room to slide past mobile folds */
+/* Alignment sub-wrapper containing link blocks and lang button */
 .nav-container > div {
   display: flex !important;
   align-items: center !important;
   gap: 16px !important;
-  overflow: hidden !important;
-  max-width: calc(100% - 160px); /* Leave clean space for your brand logo on the left */
+  overflow: visible !important;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
 }
-
-.nav-logo { 
-  font-family: "Times New Roman", Georgia, serif; 
-  font-weight: 800; 
-  font-size: 1.6rem; 
-  color: #000000; 
-  text-decoration: none; 
-  letter-spacing: 0.5px; 
-  flex-shrink: 0; 
-} 
-
-.nav-logo span { 
-  color: var(--brand-dark); 
-  font-weight: 500; 
-} 
 
 .nav-links { 
   display: flex !important; 
   flex-direction: row !important; 
-  gap: 8px; 
+  gap: 4px; 
   list-style: none; 
   align-items: center; 
+  margin: 0;
+  padding: 0 0 6px 0; 
   
-  /* FIX: Forces mobile webkit systems to unlock horizontal scrolling tracks */
+  /* CRITICAL MOBILE INTERACTION FIX: Forces native swipe physics overflow tracking */
   overflow-x: auto !important; 
   white-space: nowrap !important; 
   -webkit-overflow-scrolling: touch !important; 
   
-  /* REMOVED: scroll-snap-type (stops layout from snapping back to the first tab) */
-  padding-bottom: 4px; 
-  margin: 0;
-  
-  /* Hides scrollbars universally */ 
-  scrollbar-width: none !important; /* Firefox */ 
-  -ms-overflow-style: none !important; /* IE Edge */ 
+  /* Clear layout track scrollbars */ 
+  scrollbar-width: none !important; 
+  -ms-overflow-style: none !important; 
 } 
 
 .nav-links::-webkit-scrollbar { 
-  display: none !important; /* Chrome Safari Opera */ 
+  display: none !important; 
   width: 0 !important;
   height: 0 !important;
 } 
 
 .nav-links li { 
   display: inline-block !important; 
-  flex-shrink: 0 !important; /* FIX: Prevents text pills from warping or compressing on narrow screens */
+  flex-shrink: 0 !important; /* Prevents button pills from compressing on narrow screens */
 } 
 
-/* Pill Style Links */ 
-.nav-links a { 
-  text-decoration: none; 
-  color: #475569; 
-  font-weight: 600; 
-  font-size: 0.95rem; 
-  padding: 10px 20px; 
-  border-radius: 8px; 
-  border: 1px solid transparent; 
-  transition: all 0.2s ease-in-out; 
-} 
-
-.nav-links a:hover { 
-  color: #0f172a; 
-  background-color: #f8fafc; 
-} 
-
-.nav-links a.active,
-.nav-links a:active { 
-  color: #0f172a; 
-  background-color: var(--brand-accent-bg); 
-  border-color: var(--brand-accent-border); 
-}
 
 /* Layout Framing */
 .container {
