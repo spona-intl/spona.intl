@@ -17,11 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. SELF-CONTAINED JAVASCRIPT FADE REVEAL
+  // 2. AUTOMATIC BLANKET SCROLL REVEAL 
   // ==========================================
-  const targetElements = document.querySelectorAll(".reveal-on-scroll");
+  // Targets all content items automatically so you don't need manual classes
+  const targetElements = document.querySelectorAll(
+    ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card"
+  );
 
-  // A. Set initial hidden styles immediately on page load
+  // A. Set initial hidden states across your entire site layout
   targetElements.forEach(element => {
     element.style.opacity = "0";
     element.style.transform = "translateY(30px)";
@@ -29,28 +32,27 @@ document.addEventListener("DOMContentLoaded", () => {
     element.style.willChange = "opacity, transform";
   });
 
-  // B. Setup the intersection viewport tracking engine
+  // B. Setup the viewport tracking engine
   const scrollObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
         
-        // FIX: requestAnimationFrame tells the browser to process the visual 
-        // update on the very next screen frame, resolving the animation skip.
+        // requestAnimationFrame forces the browser to play the transition smoothly
         requestAnimationFrame(() => {
           el.style.opacity = "1";
           el.style.transform = "translateY(0)";
         });
         
-        observer.unobserve(el); // Stops tracking so the elements stay fully visible
+        observer.unobserve(el); // Locks at 100% permanent visibility
       }
     });
   }, {
     root: null, 
-    rootMargin: "0px", 
-    threshold: 0.01 // Triggers immediately as soon as 1px of the item cuts onto the screen
+    rootMargin: "0px 0px -20px 0px", // Triggers just as elements enter the screen bounds
+    threshold: 0.01 
   });
 
-  // C. Fire the observer tracking link loop
+  // C. Execute the tracking loop
   targetElements.forEach(element => scrollObserver.observe(element));
 });
