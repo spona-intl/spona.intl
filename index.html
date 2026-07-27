@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">SPONA Intl. | Home</title>
+  <!-- Force browser to fetch the clean style.css asset -->
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+      
+      <!-- Right-aligned horizontal links and language select container wrapper -->
+      <div style="display: flex; align-items: center; gap: 16px; overflow: hidden;">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+          <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
+          <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <!-- Permanent Language Selector Menu Placement Component -->
+        <div class="lang-switcher-wrapper">
+          <select id="languageSelect" class="lang-select">
+            <option value="en" selected>EN</option>
+            <option value="zh-TW">繁中</option>
+            <option value="hi">हिन्दी</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ru">RU</option>
+            <option value="fil">FIL</option>
+          </select>
         </div>
-    </nav>
+      </div>
 
-    <main class="container">
-        <header class="hero-wrapper">
-            <h1>The Student-led Peer Outreach & Neuroscience Association</h1>
-            <p>Bridging the gap between global youth collaboration and the fine matrix of brain science research.</p>
-        </header>
+    </div>
+  </nav>
 
-        <!-- 🚀 MODIFIED COMPONENT: Seamlessly routed to the dynamic calendar file -->
-        <section class="editorial-card">
-            <div class="status-pill">Admissions Cycle Active</div>
-            <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 2.2rem; font-weight: 400; margin-bottom: 16px;">The 6-Month International Cohort</h2>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;">
-                Applications open every 6 months for exactly 1 month. Form multi-national teams to analyze datasets and publish independent brain science literature reviews.
-            </p>
-            <!-- 🔗 LINKED DIRECTLY TO COHORT APPLICATION PAGE -->
-            <a href="cohort-application.html" class="action-btn">Read More</a>
-        </section>
+  <main class="container">
+    <header class="hero-wrapper">
+      <h1 data-i18n="hero_heading">The Student-led Peer Outreach & Neuroscience Association</h1>
+      <p data-i18n="hero_subheading">Bridging the gap between global youth collaboration and the fine matrix of brain science research.</p>
+    </header>
 
-        <section class="publication-runway-section">
-            <div class="section-meta-header">
-                <h2>Recent Peer Releases</h2>
-                <div class="scroll-indicator-text">Scroll Horizontally →</div>
-            </div>
-            <div class="horizontal-scroll-runway">
-                <a href="topic-neuroplasticity.html" class="scroll-item-card">
-                    <div class="card-top-meta"><span>Review Paper</span><span style="color:var(--text-muted)">July 12, 2026</span></div>
-                    <h3>Neuroplasticity in Adolescents</h3>
-                    <p>Tracking analysis detailing dynamic cortical reorganizations inside secondary student profiles.</p>
-                    <div class="card-contributor-footer">SI-CN-RA-100245 • SI-US-RA-105991</div>
-                </a>
-                <a href="topic-synaptic-pruning.html" class="scroll-item-card">
-                    <div class="card-top-meta"><span>Translation</span><span style="color:var(--text-muted)">June 28, 2026</span></div>
-                    <h3>Synaptic Pruning Summary</h3>
-                    <p>A localized linguistic conversion of developmental synaptic elimination guidelines.</p>
-                    <div class="card-contributor-footer">SI-MX-MT-500147</div>
-                </a>
-                <a href="topic-action-potentials.html" class="scroll-item-card">
-                    <div class="card-top-meta"><span>Animation</span><span style="color:var(--text-muted)">May 15, 2026</span></div>
-                    <h3>Action Potentials Visualized</h3>
-                    <p>High-fidelity vector rendering models depicting cellular membrane voltage changes.</p>
-                    <div class="card-contributor-footer">SI-GB-MA-300412 • SI-CA-DD-200951</div>
-                </a>
-            </div>
-        </section>
-    </main>
+    <!-- 🚀 MODIFIED COMPONENT: Seamlessly routed to the dynamic calendar file -->
+    <section class="editorial-card">
+      <div class="status-pill" data-i18n="cohort_status">Admissions Cycle Active</div>
+      <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 2.2rem; font-weight: 400; margin-bottom: 16px;" data-i18n="cohort_title">The 6-Month International Cohort</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;" data-i18n="cohort_description">
+        Applications open every 6 months for exactly 1 month. Form multi-national teams to analyze datasets and publish independent brain science literature reviews.
+      </p>
+      <!-- 🔗 LINKED DIRECTLY TO COHORT APPLICATION PAGE -->
+      <a href="cohort-application.html" class="action-btn" data-i18n="cohort_btn">Read More</a>
+    </section>
 
-    <footer>
-        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
-    </footer>
+    <section class="publication-runway-section">
+      <div class="section-meta-header">
+        <h2 data-i18n="runway_title">Recent Peer Releases</h2>
+        <div class="scroll-indicator-text" data-i18n="runway_scroll_hint">Scroll Horizontally →</div>
+      </div>
+      
+      <div class="horizontal-scroll-runway">
+        <a href="topic-neuroplasticity.html" class="scroll-item-card">
+          <div class="card-top-meta">
+            <span data-i18n="card1_tag">Review Paper</span>
+            <span style="color:var(--text-muted)" data-i18n="card1_date">July 12, 2026</span>
+          </div>
+          <h3 data-i18n="card1_title">Neuroplasticity in Adolescents</h3>
+          <p data-i18n="card1_description">Tracking analysis detailing dynamic cortical reorganizations inside secondary student profiles.</p>
+          <div class="card-contributor-footer">SI-CN-RA-100245 • SI-US-RA-105991</div>
+        </a>
 
+        <a href="topic-synaptic-pruning.html" class="scroll-item-card">
+          <div class="card-top-meta">
+            <span data-i18n="card2_tag">Translation</span>
+            <span style="color:var(--text-muted)" data-i18n="card2_date">June 28, 2026</span>
+          </div>
+          <h3 data-i18n="card2_title">Synaptic Pruning Summary</h3>
+          <p data-i18n="card2_description">A localized linguistic conversion of developmental synaptic elimination guidelines.</p>
+          <div class="card-contributor-footer">SI-MX-MT-500147</div>
+        </a>
+
+        <a href="topic-action-potentials.html" class="scroll-item-card">
+          <div class="card-top-meta">
+            <span data-i18n="card3_tag">Animation</span>
+            <span style="color:var(--text-muted)" data-i18n="card3_date">May 15, 2026</span>
+          </div>
+          <h3 data-i18n="card3_title">Action Potentials Visualized</h3>
+          <p data-i18n="card3_description">High-fidelity vector rendering models depicting cellular membrane voltage changes.</p>
+          <div class="card-contributor-footer">SI-GB-MA-300412 • SI-CA-DD-200951</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer_text">© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+  </footer>
+
+  <!-- Force browser to pull down a brand new copy of your functional scripts -->
+  <script src="script.js?v=2"></script>
 </body>
 </html>
