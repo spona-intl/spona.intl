@@ -392,10 +392,22 @@ footer {
 }
 
 /* ==========================================================================
-   High-Impact 2D Scale & Lift Reveal (Zero 3D)
+   Zero-Dependency Pure CSS High-Visibility Entry
    ========================================================================== */
 
-/* 1. Initial State: Flat 2D displacement and safe opacity initialization */
+/* Define a crisp, highly prominent 2D entrance */
+@keyframes intenseFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Apply directly to your structural layout elements */
 .hero-wrapper h1, 
 .hero-wrapper p, 
 section, 
@@ -403,32 +415,16 @@ section,
 .grid-block, 
 footer, 
 .list-item-card {
-  opacity: 0 !important;
-  /* PURE 2D: Drops elements down 80px and shrinks them to 90% size */
-  transform: translateY(80px) scale(0.9) !important;
-  /* SMOOTH SWEEP: Crisp, high-velocity transition timing */
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important, 
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  /* Set fallback default to visible so your content NEVER disappears */
+  opacity: 1;
+  transform: none;
+  
+  /* Fire the hardware-accelerated animation smoothly on load */
+  animation: intenseFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
 }
 
-/* 2. Active State: Snaps elements perfectly flat onto your standard page layout */
-.hero-wrapper h1.is-visible, 
-.hero-wrapper p.is-visible, 
-section.is-visible, 
-.scroll-item-card.is-visible, 
-.grid-block.is-visible, 
-footer.is-visible, 
-.list-item-card.is-visible {
-  opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
-}
-
-/* 3. Accessibility Override */
-@media (prefers-reduced-motion: reduce) {
-  .hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
+/* Add deliberate delays so elements cascade naturally row-by-row */
+.hero-wrapper h1 { animation-delay: 0.1s; }
+.hero-wrapper p  { animation-delay: 0.3s; }
+section          { animation-delay: 0.5s; }
