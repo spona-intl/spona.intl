@@ -391,31 +391,3 @@ footer {
   margin-top: 80px;
 }
 
-/* ==========================================================================
-   Failsafe Scroll Reveal Animations
-   ========================================================================== */
-
-/* 1. Default Initial State: Hidden and shifted down out of view */
-.reveal-on-scroll {
-  opacity: 0 !important;
-  transform: translateY(30px); /* Slightly reduced for a smoother text shift effect */
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-/* 2. Active Visible State: Triggered via JavaScript observer switch */
-.reveal-on-scroll.is-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* 3. Accessibility override */
-@media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
