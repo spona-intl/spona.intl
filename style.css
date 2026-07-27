@@ -64,87 +64,106 @@ body {
   }
 }
 
-/* Navigation Header Structure */
-nav {
-  position: sticky;
-  top: 0;
-  background-color: rgba(252, 252, 253, 0.9);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 16px 20px;
-  z-index: 1000;
-  backdrop-filter: blur(20px);
+/* Navigation Header Structure */ 
+nav { 
+  position: sticky; 
+  top: 0; 
+  background-color: rgba(252, 252, 253, 0.9); 
+  border-bottom: 1px solid var(--border-subtle); 
+  padding: 16px 20px; 
+  z-index: 1000; 
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+} 
+
+.nav-container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 20px; 
+} 
+
+/* FIX: Forces the wrapper around your navigation list and language icon 
+   to display as a flexible row with room to slide past mobile folds */
+.nav-container > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  overflow: hidden !important;
+  max-width: calc(100% - 160px); /* Leave clean space for your brand logo on the left */
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
+.nav-logo { 
+  font-family: "Times New Roman", Georgia, serif; 
+  font-weight: 800; 
+  font-size: 1.6rem; 
+  color: #000000; 
+  text-decoration: none; 
+  letter-spacing: 0.5px; 
+  flex-shrink: 0; 
+} 
 
-.nav-logo {
-  font-family: "Times New Roman", Georgia, serif;
-  font-weight: 800;
-  font-size: 1.6rem;
-  color: #000000;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-}
+.nav-logo span { 
+  color: var(--brand-dark); 
+  font-weight: 500; 
+} 
 
-.nav-logo span {
-  color: var(--brand-dark);
-  font-weight: 500;
-}
+.nav-links { 
+  display: flex !important; 
+  flex-direction: row !important; 
+  gap: 8px; 
+  list-style: none; 
+  align-items: center; 
+  
+  /* FIX: Forces mobile webkit systems to unlock horizontal scrolling tracks */
+  overflow-x: auto !important; 
+  white-space: nowrap !important; 
+  -webkit-overflow-scrolling: touch !important; 
+  
+  /* REMOVED: scroll-snap-type (stops layout from snapping back to the first tab) */
+  padding-bottom: 4px; 
+  margin: 0;
+  
+  /* Hides scrollbars universally */ 
+  scrollbar-width: none !important; /* Firefox */ 
+  -ms-overflow-style: none !important; /* IE Edge */ 
+} 
 
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  list-style: none;
-  align-items: center;
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 4px;
-  /* Hides scrollbars universally */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE Edge */
-}
+.nav-links::-webkit-scrollbar { 
+  display: none !important; /* Chrome Safari Opera */ 
+  width: 0 !important;
+  height: 0 !important;
+} 
 
-.nav-links::-webkit-scrollbar {
-  display: none; /* Chrome Safari Opera */
-}
+.nav-links li { 
+  display: inline-block !important; 
+  flex-shrink: 0 !important; /* FIX: Prevents text pills from warping or compressing on narrow screens */
+} 
 
-.nav-links li {
-  scroll-snap-align: start;
-  display: inline-block;
-}
+/* Pill Style Links */ 
+.nav-links a { 
+  text-decoration: none; 
+  color: #475569; 
+  font-weight: 600; 
+  font-size: 0.95rem; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  border: 1px solid transparent; 
+  transition: all 0.2s ease-in-out; 
+} 
 
-/* Pill Style Links */
-.nav-links a {
-  text-decoration: none;
-  color: #475569;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
-}
+.nav-links a:hover { 
+  color: #0f172a; 
+  background-color: #f8fafc; 
+} 
 
-.nav-links a:hover {
-  color: #0f172a;
-  background-color: #f8fafc;
-}
-
-.nav-links a:active {
-  color: #0f172a;
-  background-color: var(--brand-accent-bg);
-  border-color: var(--brand-accent-border);
+.nav-links a.active,
+.nav-links a:active { 
+  color: #0f172a; 
+  background-color: var(--brand-accent-bg); 
+  border-color: var(--brand-accent-border); 
 }
 
 /* Layout Framing */
