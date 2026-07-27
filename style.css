@@ -65,7 +65,7 @@ body {
 }
 
 /* ==========================================================================
-   Navigation Header Layout (Fixed Mobile Swipe Physics)
+   Navigation Header Structure (Universal Smooth Scroll Layout)
    ========================================================================== */
 nav { 
   position: sticky; 
@@ -87,17 +87,34 @@ nav {
   gap: 20px; 
 } 
 
-/* Alignment sub-wrapper containing link blocks and lang button */
+/* Logo branding layout element placement styles */
+.nav-logo { 
+  font-family: "Times New Roman", Georgia, serif; 
+  font-weight: 800; 
+  font-size: 1.6rem; 
+  color: #000000; 
+  text-decoration: none; 
+  letter-spacing: 0.5px; 
+  flex-shrink: 0; /* Keeps logo from crushing down on tiny screens */
+} 
+
+.nav-logo span { 
+  color: var(--brand-dark); 
+  font-weight: 500; 
+} 
+
+/* Universal flex grouping layout structure for the right navigation items side */
 .nav-container > div {
   display: flex !important;
   align-items: center !important;
   gap: 16px !important;
-  overflow: visible !important;
+  min-width: 0; /* Unlocks scrolling flex-shrink actions safely */
   flex: 1;
   justify-content: flex-end;
-  min-width: 0;
+  overflow: visible !important;
 }
 
+/* Permanent fluid row container for link blocks with scroll mechanics */
 .nav-links { 
   display: flex !important; 
   flex-direction: row !important; 
@@ -105,28 +122,67 @@ nav {
   list-style: none; 
   align-items: center; 
   margin: 0;
-  padding: 0 0 6px 0; 
+  padding: 0 0 4px 0; 
   
-  /* CRITICAL MOBILE INTERACTION FIX: Forces native swipe physics overflow tracking */
+  /* FIXED: Enables smooth horizontal swipe overflow mechanics on all viewports */
   overflow-x: auto !important; 
   white-space: nowrap !important; 
   -webkit-overflow-scrolling: touch !important; 
   
-  /* Clear layout track scrollbars */ 
-  scrollbar-width: none !important; 
-  -ms-overflow-style: none !important; 
+  /* Clears layout scrollbars across all modern engines */ 
+  scrollbar-width: none !important; /* Firefox */ 
+  -ms-overflow-style: none !important; /* IE Edge */ 
 } 
 
 .nav-links::-webkit-scrollbar { 
-  display: none !important; 
+  display: none !important; /* Chrome, Safari, Opera */ 
   width: 0 !important;
   height: 0 !important;
 } 
 
 .nav-links li { 
   display: inline-block !important; 
-  flex-shrink: 0 !important; /* Prevents button pills from compressing on narrow screens */
+  flex-shrink: 0 !important; /* Prevents text pills from wrapping or warping */
 } 
+
+/* Pill Style Links */ 
+.nav-links a { 
+  text-decoration: none; 
+  color: #475569; 
+  font-weight: 600; 
+  font-size: 0.95rem; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  border: 1px solid transparent; 
+  transition: all 0.2s ease-in-out; 
+} 
+
+.nav-links a:hover { 
+  color: #0f172a; 
+  background-color: #f8fafc; 
+} 
+
+.nav-links a.active,
+.nav-links a:active { 
+  color: #0f172a; 
+  background-color: var(--brand-accent-bg); 
+  border-color: var(--brand-accent-border); 
+}
+
+/* Compact layout sizing specific to narrow mobile screen form factors */
+@media (max-width: 640px) {
+  nav {
+    padding: 12px 14px; /* Slightly tighter spacing frame */
+  }
+  .nav-logo {
+    font-size: 1.3rem; /* Scales logo down elegantly */
+  }
+  .nav-links a {
+    font-size: 0.88rem; /* Compact pill typography sizing rules */
+    padding: 8px 14px;
+  }
+}
+
 
 
 /* Layout Framing */
