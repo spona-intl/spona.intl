@@ -17,43 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. HIGH-VISIBILITY SCROLL REVEAL 
+  // 2. LIGHTWEIGHT SCROLL TRIGGER ENGINE
   // ==========================================
   const targetElements = document.querySelectorAll(
     ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card"
   );
 
-  // A. Set dramatic starting positions
-  targetElements.forEach(element => {
-    element.style.opacity = "0";
-    // ENHANCED: Increased distance from 30px to 70px for a more obvious slide-up effect
-    element.style.transform = "translateY(70px)"; 
-    // ENHANCED: Extended duration to 1.8 seconds for a more visible, sweeping fade
-    element.style.transition = "opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)";
-    element.style.willChange = "opacity, transform";
-  });
-
-  // B. Setup the tracking engine
   const scrollObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const el = entry.target;
-        
-        requestAnimationFrame(() => {
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-        });
-        
-        observer.unobserve(el); // Keeps elements locked at 100% visible
+        // Simply flip the switch. CSS takes over the physical rendering work perfectly.
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target); 
       }
     });
   }, {
     root: null, 
-    // ENHANCED: Adjusted trigger area so elements wait a bit longer before fading in
-    rootMargin: "0px 0px -50px 0px", 
+    rootMargin: "0px 0px -60px 0px", // Triggers right as elements clear the bottom screen edge
     threshold: 0.01 
   });
 
-  // C. Execute tracking
   targetElements.forEach(element => scrollObserver.observe(element));
 });
