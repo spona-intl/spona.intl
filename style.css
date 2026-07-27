@@ -392,27 +392,73 @@ footer {
 }
 
 /* ==========================================================================
-   High-Fidelity Dynamic Peripheral Focus Engine
+   Hardware-Accelerated Fluid Scroll-Focus Matrix
    ========================================================================== */
 
-.reveal-on-scroll {
-  /* Default Periphery State: Left at 60% opacity with a soft, clean layout position */
-  opacity: 0.6;
-  transform: scale(0.98);
-  /* Smoothly blends active scroll variations instantly without sudden clipping updates */
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* 1. Set up the baseline native animation rules */
+@keyframes dynamicFocusSweep {
+  0% {
+    opacity: 0.6;
+    transform: translateY(20px) scale(0.97);
+  }
+  /* Perfect 100% focus peak right when the element crosses the middle of the screen */
+  35%, 65% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(-20px) scale(0.97);
+  }
+}
+
+/* 2. Bind the timeline directly onto your structural page components */
+.hero-wrapper h1, 
+.hero-wrapper p, 
+.status-pill, 
+section, 
+.editorial-card, 
+.scroll-item-card, 
+.grid-block, 
+.list-item-card, 
+.search-bar, 
+footer {
+  /* Failsafe default layout values if the viewport isn't moving */
+  opacity: 1;
   will-change: opacity, transform;
 }
 
-/* Fallback protection for devices running accessibility accessibility reduced-motion parameters */
-@media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+/* 3. Modern Browser Core Setup: Binds the animation directly to the scroll view */
+@supports (animation-timeline: view()) {
+  .hero-wrapper h1, 
+  .hero-wrapper p, 
+  .status-pill, 
+  section, 
+  .editorial-card, 
+  .scroll-item-card, 
+  .grid-block, 
+  .list-item-card, 
+  .search-bar, 
+  footer {
+    opacity: 0.6;
+    animation: dynamicFocusSweep linear both;
+    animation-timeline: view();
+    /* Triggers the entry phase right as items cross the browser boundaries */
+    animation-range: entry 0% exit 100%;
   }
 }
+
+/* 4. Accessibility bypass */
+@media (prefers-reduced-motion: reduce) {
+  @supports (animation-timeline: view()) {
+    .hero-wrapper h1, .hero-wrapper p, .status-pill, section, .editorial-card, .scroll-item-card, .grid-block, .list-item-card, .search-bar, footer {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
 
 
 
