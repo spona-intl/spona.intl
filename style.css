@@ -479,3 +479,92 @@ footer {
   background-color: var(--bg-card);
   color: var(--text-display);
 }
+
+
+/* ==========================================================================
+   Minimalist Floating Pop-up Language Picker
+   ========================================================================== */
+.custom-lang-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Thinner, smaller borderless clickable icon wrapper */
+.lang-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang-icon-btn svg {
+  width: 18px; /* Thinner and smaller dimension footprint */
+  height: 18px;
+}
+
+.lang-icon-btn:hover {
+  color: var(--text-display);
+  background-color: #f1f5f9;
+}
+
+/* Floating selection list box container profile */
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  width: 160px;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 2000;
+  
+  /* Hidden default states ready for interaction triggers */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+/* Toggle modifier class managed seamlessly by JavaScript actions */
+.lang-dropdown-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Styled text rows inside selection list panel */
+.lang-menu-item {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.lang-menu-item:hover {
+  background-color: #f8fafc;
+  color: var(--text-display);
+}
+
+/* Dynamic highlighted active selected item layout state */
+.lang-menu-item.active {
+  color: var(--text-display);
+  background-color: var(--brand-accent-bg);
+  font-weight: 600;
+}
