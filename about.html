@@ -1,98 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | About Us</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="about_page_title">SPONA Intl. | About Us</title>
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+      
+      <!-- Right-aligned horizontal links and language select container wrapper -->
+      <div style="display: flex; align-items: center; gap: 16px; overflow: hidden;">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="active" data-i18n="nav_about">About Us</a></li>
+          <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
+          <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <!-- Permanent Language Selector Menu Placement Component -->
+        <div class="lang-switcher-wrapper">
+          <!-- SVG Globe Icon Embedded Directly for Maximum Performance -->
+          <svg class="lang-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          
+          <select id="languageSelect" class="lang-select">
+            <option value="en" selected>EN</option>
+            <option value="zh-TW">繁中</option>
+            <option value="hi">हिन्दी</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ru">RU</option>
+            <option value="fil">FIL</option>
+          </select>
         </div>
-    </nav>
+      </div>
 
-    <main class="container" style="max-width: 850px;">
-        <div class="hero-wrapper" style="text-align: left; margin-bottom: 48px;">
-            <div class="status-pill">Who We Are</div>
-            <h1 style="text-align: left; margin: 0 0 24px 0;">SPONA Intl.</h1>
-            <p style="text-align: left; font-size: 1.15rem; line-height: 1.7; color: var(--text-display); margin-bottom: 20px;">
-                The Student-led Peer Outreach and Neuroscience Association is a global, student-led academic network. We bridge the gap between youth peer collaboration and the cutting-edge world of brain science. Run entirely by students, for students, our network empowers young minds to dive into neuroscience, conduct peer-led research, and connect with an international community of future scientists.
-            </p>
-            <p class="disclaimer-text">
-                Disclaimer: All content shared is strictly for informational and educational purposes and does not constitute professional medical advice, diagnosis, or treatment.
-            </p>
+    </div>
+  </nav>
+
+  <main class="container" style="max-width: 850px;">
+    <div class="hero-wrapper" style="text-align: left; margin-bottom: 48px;">
+      <div class="status-pill" data-i18n="about_badge">Who We Are</div>
+      <h1 style="text-align: left; margin: 0 0 24px 0;" data-i18n="about_heading">SPONA Intl.</h1>
+      <p style="text-align: left; font-size: 1.15rem; line-height: 1.7; color: var(--text-display); margin-bottom: 20px;" data-i18n="about_intro_p">
+        The Student-led Peer Outreach and Neuroscience Association is a global, student-led academic network. We bridge the gap between youth peer collaboration and the cutting-edge world of brain science. Run entirely by students, for students, our network empowers young minds to dive into neuroscience, conduct peer-led research, and connect with an international community of future scientists.
+      </p>
+      <p class="disclaimer-text" data-i18n="about_disclaimer">
+        Disclaimer: All content shared is strictly for informational and educational purposes and does not constitute professional medical advice, diagnosis, or treatment.
+      </p>
+    </div>
+
+    <section style="margin-bottom: 50px;">
+      <div class="section-meta-header"><h2 data-i18n="mission_title">🚀 Our Mission</h2></div>
+      <div class="editorial-grid" style="margin-top: 0; gap: 20px;">
+        <div class="grid-block">
+          <h3 data-i18n="mission_block1_h">Demystify the Brain</h3>
+          <p data-i18n="mission_block1_p">Making complex neuroscience and research accessible, engaging, and relevant to secondary school students worldwide.</p>
         </div>
+        <div class="grid-block">
+          <h3 data-i18n="mission_block2_h">Global Peer Support</h3>
+          <p data-i18n="mission_block2_p">Providing an inclusive, online space where students can connect, share academic insights, and collaborate on scientific projects.</p>
+        </div>
+        <div class="grid-block" style="grid-column: 1 / -1;">
+          <h3 data-i18n="mission_block3_h">Youth-Led Innovation</h3>
+          <p data-i18n="mission_block3_p">Demonstrating the power of independent student leadership in the global academic and scientific community.</p>
+        </div>
+      </div>
+    </section>
 
-        <section style="margin-bottom: 50px;">
-            <div class="section-meta-header"><h2>🚀 Our Mission</h2></div>
-            <div class="editorial-grid" style="margin-top: 0; gap: 20px;">
-                <div class="grid-block">
-                    <h3>Demystify the Brain</h3>
-                    <p>Making complex neuroscience and research accessible, engaging, and relevant to secondary school students worldwide.</p>
-                </div>
-                <div class="grid-block">
-                    <h3>Global Peer Support</h3>
-                    <p>Providing an inclusive, online space where students can connect, share academic insights, and collaborate on scientific projects.</p>
-                </div>
-                <div class="grid-block" style="grid-column: 1 / -1;">
-                    <h3>Youth-Led Innovation</h3>
-                    <p>Demonstrating the power of independent student leadership in the global academic and scientific community.</p>
-                </div>
-            </div>
-        </section>
+    <section class="grid-block" style="margin-bottom: 50px; border-left: 3px solid var(--brand-dark);">
+      <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.6rem; margin-bottom: 16px;" data-i18n="privacy_title">🔒 Digital Security & Privacy Statement</h2>
+      <p style="margin-bottom: 20px;" data-i18n="privacy_subtitle">As an international organization built by students, digital trust is our highest priority. SPONA Intl. operates strictly as a zero-data platform.</p>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 16px; font-size: 0.95rem;">
+          <strong data-i18n="privacy_item1_bold">No Personal Tracking:</strong> <span data-i18n="privacy_item1_text">We do not collect, track, or store any personal data, analytics, or registration information from our visitors.</span>
+        </li>
+        <li style="margin-bottom: 16px; font-size: 0.95rem;">
+          <strong data-i18n="privacy_item2_bold">No Financial Details:</strong> <span data-i18n="privacy_item2_text">Our platform is 100% non-commercial. We will never request financial details, payments, or donations.</span>
+        </li>
+        <li style="margin-bottom: 0; font-size: 0.95rem;">
+          <strong data-i18n="privacy_item3_bold">Safe Open Access:</strong> <span data-i18n="privacy_item3_text">All educational articles, neuro-research toolkits, and peer resources are completely open and free to access safely from anywhere in the world.</span>
+        </li>
+      </ul>
+    </section>
 
-        <section class="grid-block" style="margin-bottom: 50px; border-left: 3px solid var(--brand-dark);">
-            <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.6rem; margin-bottom: 16px;">🔒 Digital Security & Privacy Statement</h2>
-            <p style="margin-bottom: 20px;">As an international organization built by students, digital trust is our highest priority. SPONA Intl. operates strictly as a zero-data platform.</p>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 16px; font-size: 0.95rem;"><strong>No Personal Tracking:</strong> We do not collect, track, or store any personal data, analytics, or registration information from our visitors.</li>
-                <li style="margin-bottom: 16px; font-size: 0.95rem;"><strong>No Financial Details:</strong> Our platform is 100% non-commercial. We will never request financial details, payments, or donations.</li>
-                <li style="margin-bottom: 0; font-size: 0.95rem;"><strong>Safe Open Access:</strong> All educational articles, neuro-research toolkits, and peer resources are completely open and free to access safely from anywhere in the world.</li>
-            </ul>
-        </section>
+    <section style="margin-bottom: 50px;">
+      <div class="section-meta-header"><h2 data-i18n="join_title">🧬 Join SPONA Intl.</h2></div>
+      <p style="font-size: 1.05rem; margin-bottom: 32px;" data-i18n="join_subtitle">You do not need a university degree to start exploring the brain. Whether you want to write scientific articles, lead a global team, or simply learn alongside peers from around the world, there is a place for you at SPONA Intl.</p>
+      
+      <h3 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 20px;" data-i18n="involvement_heading">🚀 Ways to Get Involved</h3>
+      
+      <div class="list-item-card">
+        <h4 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;" data-i18n="join_card1_h">Become a Student Researcher</h4>
+        <p data-i18n="join_card1_p">Collaborate with international peers to review scientific literature, analyze data, and publish youth-led neuroscience articles.</p>
+      </div>
+      
+      <div class="list-item-card">
+        <h4 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;" data-i18n="join_card2_h">Join the Peer Support & Outreach Team</h4>
+        <p data-i18n="join_card2_p">Help build our global community, moderate digital discussion spaces, and connect students interested in mental health and brain science.</p>
+      </div>
+      
+      <div class="list-item-card">
+        <h4 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;" data-i18n="join_card3_h">Launch a Local Chapter</h4>
+        <p data-i18n="join_card3_p">Bring SPONA Intl. to your secondary school. Act as a regional director, host study groups, and lead local science initiatives.</p>
+      </div>
+    </section>
 
-        <section style="margin-bottom: 50px;">
-            <div class="section-meta-header"><h2>🧬 Join SPONA Intl.</h2></div>
-            <p style="font-size: 1.05rem; margin-bottom: 32px;">You do not need a university degree to start exploring the brain. Whether you want to write scientific articles, lead a global team, or simply learn alongside peers from around the world, there is a place for you at SPONA Intl.</p>
-            
-            <h3 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 20px;">🚀 Ways to Get Involved</h3>
-            <div class="list-item-card">
-                <h4 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Become a Student Researcher</h4>
-                <p>Collaborate with international peers to review scientific literature, analyze data, and publish youth-led neuroscience articles.</p>
-            </div>
-            <div class="list-item-card">
-                <h4 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Join the Peer Support & Outreach Team</h4>
-                <p>Help build our global community, moderate digital discussion spaces, and connect students interested in mental health and brain science.</p>
-            </div>
-            <div class="list-item-card">
-                <h4 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Launch a Local Chapter</h4>
-                <p>Bring SPONA Intl. to your secondary school. Act as a regional director, host study groups, and lead local science initiatives.</p>
-            </div>
-        </section>
+    <section>
+      <div class="section-meta-header"><h2 data-i18n="gain_title">📈 What You Gain</h2></div>
+      <ul style="list-style: square; padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
+        <li style="margin-bottom: 12px;">
+          <strong style="color: var(--text-display);" data-i18n="gain_item1_bold">Global Collaboration:</strong> <span data-i18n="gain_item1_text">Work directly with ambitious pre-med and science students from different countries.</span>
+        </li>
+        <li style="margin-bottom: 12px;">
+          <strong style="color: var(--text-display);" data-i18n="gain_item2_bold">Resume & Portfolio Booster:</strong> <span data-i18n="gain_item2_text">Stand out on university applications by leading independent scientific research projects consistently.</span>
+        </li>
+        <li style="margin-bottom: 0;">
+          <strong style="color: var(--text-display);" data-i18n="gain_item3_bold">Leadership Roles:</strong> <span data-i18n="gain_item3_text">Gain real-world experience running an international digital organization.</span>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-        <section>
-            <div class="section-meta-header"><h2>📈 What You Gain</h2></div>
-            <ul style="list-style: square; padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong style="color: var(--text-display);">Global Collaboration:</strong> Work directly with ambitious pre-med and science students from different countries.</li>
-                <li style="margin-bottom: 12px;"><strong style="color: var(--text-display);">Resume & Portfolio Booster:</strong> Stand out on university applications by leading independent scientific research projects consistently.</li>
-                <li style="margin-bottom: 0;"><strong style="color: var(--text-display);">Leadership Roles:</strong> Gain real-world experience running an international digital organization.</li>
-            </ul>
-        </section>
-    </main>
+  <footer>
+    <p data-i18n="footer_text">© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+  </footer>
 
-    <footer>
-        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
-    </footer>
-
+  <!-- Connect your fixed layout script and reset cache memory parameters -->
+  <script src="script.js?v=2"></script>
 </body>
 </html>
