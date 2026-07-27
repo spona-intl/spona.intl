@@ -651,36 +651,54 @@ footer {
 }
 
 /* ==========================================================================
-   Stationary Fixed Position Search Bar
+   High-Impact Native Sticky Search Component
    ========================================================================== */
+
+/* FIX: Removes parent constraints so the browser can calculate scroll thresholds */
+body, main, .container {
+  overflow: visible !important;
+}
+
 .search-bar {
-  /* FIX: Using fixed isolates the input element from parent scroll timelines */
-  position: fixed !important;
-  top: 73px !important; /* Positions it directly below your navigation bar fold */
-  left: 50% !important;
-  transform: translateX(-50%) !important; /* Centers the input panel perfectly */
+  /* STICKY CONFIGURATION: Rolls naturally with page, locks precisely below navbar */
+  position: sticky !important;
+  top: 73px !important; 
+  z-index: 990 !important; /* Floats safely above scrolling card structures */
   
-  width: calc(100% - 40px) !important;
-  max-width: 810px !important; /* Matches your 850px content container lines */
-  z-index: 995 !important; /* Floats safely on top of the scrolling list cards */
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 40px !important;
   
-  /* Forces the input field to remain visible and ignores view animations */
-  opacity: 1 !important;
+  /* Forces the field to remain fully visible, ignoring global scroll fade timelines */
+  opacity: 1 !important; 
   animation: none !important;
+  will-change: transform;
   
-  /* Elegant frosted glass backing card style */
+  /* Frosted glass backdrop backing makes scrolled list items look neat behind the input */
   background-color: rgba(252, 252, 253, 0.98) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* FIX: Adds an offset spacer so cards do not start hidden behind the fixed bar */
-#noResultsMessage, 
+.search-bar:focus {
+  border-color: var(--text-display);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* FIX: Resets hero spacing back to your clean original design parameters */
+.hero-wrapper {
+  margin-top: 0 !important;
+}
+
 #resourceRegistry {
-  margin-top: 110px !important;
   position: relative;
   z-index: 10;
+  margin-top: 0 !important; /* Clears old hard spacers */
 }
