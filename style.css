@@ -596,20 +596,24 @@ footer {
 
 
 /* ==========================================================================
-   Fixed Sticky Position Search Bar Layer (Bypasses Scroll Timelines)
+   High-Visibility Fixed Search Component Lane (100% Visible & Stationary)
    ========================================================================== */
 .search-bar {
-  /* CRITICAL STICKY FIX: position: fixed isolates the input element from parent overflow blocks */
+  /* Isolate position calculations from scrolling animation-timeline parents */
   position: fixed !important;
-  top: 73px; /* Placed exactly below the sticky nav folder height */
-  left: 50%;
-  transform: translateX(-50%); /* Centers the fixed search box perfectly */
+  top: 73px !important; 
+  left: 50% !important;
+  transform: translateX(-50%) !important; 
   
-  width: calc(100% - 40px);
-  max-width: 810px; /* Aligns flawlessly with your 850px container pad lines */
-  z-index: 995 !important; /* Floats safely on top of scrolling list cards */
+  width: calc(100% - 40px) !important;
+  max-width: 810px !important; 
+  z-index: 995 !important; 
   
-  /* Frosted glass backdrop styling */
+  /* FIX: Forces search field to remain completely locked at full visibility layer */
+  opacity: 1 !important; 
+  animation: none !important; 
+  
+  /* Frosted backing profile layout blocks */
   background-color: rgba(252, 252, 253, 0.98) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
@@ -618,20 +622,10 @@ footer {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
 }
 
-/* Creates a structural padding spacer so your resource cards don't start hidden under the fixed search bar */
+/* Pad offset blocks scrolling card entries from sliding underneath pre-hidden spaces */
 #noResultsMessage, #resourceRegistry {
-  margin-top: 100px !important;
+  margin-top: 110px !important;
   position: relative;
   z-index: 10;
 }
 
-/* Accessibility bypass */
-@media (prefers-reduced-motion: reduce) {
-  @supports (animation-timeline: view()) {
-    .hero-wrapper h1, .hero-wrapper p, .status-pill, section, .editorial-card, .scroll-item-card, .grid-block, .list-item-card, footer {
-      animation: none !important;
-      opacity: 1 !important;
-      transform: none !important;
-    }
-  }
-}
