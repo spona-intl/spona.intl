@@ -391,3 +391,31 @@ footer {
   margin-top: 80px;
 }
 
+/* ==========================================================================
+   Failsafe 2D Scroll Reveal Animations
+   ========================================================================== */
+
+/* 1. Default Initial State: Hidden and shifted down out of view */
+.reveal-on-scroll {
+  opacity: 0 !important;
+  transform: translateY(40px) scale(0.98);
+  /* Smooth hardware-accelerated movement */
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* 2. Active Visible State: Triggered instantly when JS adds the class */
+.reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* 3. Accessibility Override */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
