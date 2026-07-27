@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // FEATURE 2: DYNAMIC 10+ LANGUAGE SWITCHING INTERNATIONIZATION ENGINE
+  // FEATURE 2: DYNAMIC 10+ LANGUAGE SWITCHING INTERNATIONALIZATION ENGINE
   // ==========================================================================
   const languageSelect = document.getElementById("languageSelect");
 
@@ -89,4 +89,33 @@ document.addEventListener("DOMContentLoaded", () => {
       setLanguage(e.target.value);
     });
   }
+
+  // ==========================================================================
+  // FEATURE 3: VIEWPORT OBSERVER (HIGH-VISIBILITY 2D SCROLL REVEAL ENGINE)
+  // ==========================================================================
+  const scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Direct execution: flips the visibility class instantly
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, {
+    root: null, 
+    rootMargin: "0px 0px -40px 0px", // Activates cleanly as items cross the screen fold
+    threshold: 0.01 
+  });
+
+  // Automatically find and track all major layout components on the page
+  const targetElements = document.querySelectorAll(
+    ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, footer"
+  );
+  
+  targetElements.forEach(element => {
+    // Add the starting class dynamically so your HTML files stay clean
+    element.classList.add("reveal-on-scroll");
+    scrollObserver.observe(element);
+  });
+
 });
