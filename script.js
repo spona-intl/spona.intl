@@ -17,23 +17,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. LIGHTWEIGHT SCROLL TRIGGER ENGINE
+  // 2. STAGGERED 3D REVEAL TRIGGER ENGINE
   // ==========================================
   const targetElements = document.querySelectorAll(
     ".hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card"
   );
 
+  let revealQueue = [];
+  let revealTimeout = null;
+
+  // Process the queue with a tight, satisfying stagger delay
+  function processQueue() {
+    revealQueue.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("is-visible");
+      }, index * 120); // 120ms ripple delay between adjacent items
+    });
+    // Clear queue after firing transitions
+    revealQueue = [];
+    revealTimeout = null;
+  }
+
   const scrollObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Simply flip the switch. CSS takes over the physical rendering work perfectly.
-        entry.target.classList.add("is-visible");
+        // Add to staggering batch queue
+        revealQueue.push(entry.target);
         observer.unobserve(entry.target); 
+
+        // Batch multiple elements hitting the screen at the exact same time
+        if (!revealTimeout) {
+          revealTimeout = setTimeout(processQueue, 30);
+        }
       }
     });
   }, {
     root: null, 
-    rootMargin: "0px 0px -60px 0px", // Triggers right as elements clear the bottom screen edge
+    rootMargin: "0px 0px -40px 0px", // Triggers aggressively just above the viewport base fold
     threshold: 0.01 
   });
 
