@@ -391,3 +391,45 @@ footer {
   margin-top: 80px;
 }
 
+/* ==========================================================================
+   High-Visibility Cinematic Scroll Reveal
+   ========================================================================== */
+
+/* 1. Default Hidden State: Targeted across all main structural components */
+.hero-wrapper h1, 
+.hero-wrapper p, 
+section, 
+.scroll-item-card, 
+.grid-block, 
+footer, 
+.list-item-card {
+  opacity: 0 !important;
+  /* DRAMATIC CHANGE: Drops elements down by 90px for an unmistakable slide up */
+  transform: translateY(90px) !important;
+  /* CINEMATIC CHANGE: Extended to 1.8s with a custom curve that starts fast and slows down beautifully */
+  transition: opacity 1.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) !important, 
+              transform 1.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) !important;
+  /* Optimizes performance directly on the GPU compositor timeline layer */
+  will-change: opacity, transform;
+}
+
+/* 2. Active Visible State: Triggered instantly when JS adds the '.is-visible' flag class */
+.hero-wrapper h1.is-visible, 
+.hero-wrapper p.is-visible, 
+section.is-visible, 
+.scroll-item-card.is-visible, 
+.grid-block.is-visible, 
+footer.is-visible, 
+.list-item-card.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 3. Accessibility override for users who prefer no motion alerts */
+@media (prefers-reduced-motion: reduce) {
+  .hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
