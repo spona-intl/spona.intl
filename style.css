@@ -611,3 +611,30 @@ footer {
   background-color: var(--brand-accent-bg);
   font-weight: 600;
 }
+
+
+/* ==========================================================================
+   Fixed Layer Placement for Sticky Search Components
+   ========================================================================== */
+
+/* Upgrades your sticky position profile to remain locked on top folders */
+.search-bar {
+  position: sticky !important;
+  top: 73px; /* Sits perfectly below your navigation header thickness fold */
+  z-index: 990 !important; /* Forces input to remain stacked above scrolling text rows */
+  
+  /* Blends cards away with an elegant frosted-glass backdrop overlay block */
+  background-color: rgba(252, 252, 253, 0.98) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--border-subtle);
+  
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  margin-bottom: 50px !important;
+}
+
+/* Ensure container cards remain placed safely below the sticky field boundaries */
+#resourceRegistry {
+  position: relative;
+  z-index: 10;
+}
