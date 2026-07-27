@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | Resources</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="resources_page_title">SPONA Intl. | Resources</title>
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
-<nav>
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-    
-    <div style="display: flex; align-items: center; gap: 16px; position: relative;">
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-        <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
-        <li><a href="events.html" data-i18n="nav_events">Events</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
-      </ul>
-
-      <!-- Smooth Small Icon Picker Trigger Block -->
-      <div class="custom-lang-container">
-        <button id="langMenuBtn" class="lang-icon-btn" aria-label="Switch Language">
-          <!-- Smaller, Thinner Vector Globe Icon -->
-          <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-        </button>
-
-        <!-- Elegant Floating Pop-up Selection List Menu Box -->
-        <div id="langDropMenu" class="lang-dropdown-menu">
-          <button data-lang-val="en" class="lang-menu-item active">English (EN)</button>
-          <button data-lang-val="zh-TW" class="lang-menu-item">繁體中文 (ZH)</button>
-          <button data-lang-val="hi" class="lang-menu-item">हिन्दी (HI)</button>
-          <button data-lang-val="es" class="lang-menu-item">Español (ES)</button>
-          <button data-lang-val="fr" class="lang-menu-item">Français (FR)</button>
-          <button data-lang-val="ru" class="lang-menu-item">Русский (RU)</button>
-          <button data-lang-val="fil" class="lang-menu-item">Filipino (FIL)</button>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+      <div style="display: flex; align-items: center; gap: 16px; position: relative;">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+          <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
+          <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <!-- Smooth Small Icon Picker Trigger Block -->
+        <div class="custom-lang-container">
+          <button id="langMenuBtn" class="lang-icon-btn" aria-label="Switch Language">
+            <!-- Smaller, Thinner Vector Globe Icon -->
+            <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </button>
+          <!-- Elegant Floating Pop-up Selection List Menu Box -->
+          <div id="langDropMenu" class="lang-dropdown-menu">
+            <button data-lang-val="en" class="lang-menu-item active">English (EN)</button>
+            <button data-lang-val="zh-TW" class="lang-menu-item">繁體中文 (ZH)</button>
+            <button data-lang-val="hi" class="lang-menu-item">हिन्दी (HI)</button>
+            <button data-lang-val="es" class="lang-menu-item">Español (ES)</button>
+            <button data-lang-val="fr" class="lang-menu-item">Français (FR)</button>
+            <button data-lang-val="ru" class="lang-menu-item">Русский (RU)</button>
+            <button data-lang-val="fil" class="lang-menu-item">Filipino (FIL)</button>
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
-</nav>
+  </nav>
 
   <main class="container" style="max-width: 850px;">
     <div class="hero-wrapper" style="text-align: left; margin-bottom: 40px;">
@@ -55,7 +51,7 @@
       <p style="text-align: left;" data-i18n="resources_subheading">Browse our repository of peer-reviewed summaries, video animations, and multilingual research translations.</p>
     </div>
 
-    <!-- Search Input element with static data-placeholder-i18n hook used for dynamic script translation updates -->
+    <!-- NATIVE PLACEMENT: Sits inside main block and will only stick when scrolled past -->
     <input type="text" id="resourceSearch" class="search-bar" placeholder="Search by topic, keyword, or full student UID (e.g., SI-CN-RA-100245)..." data-placeholder-i18n="resources_search_placeholder">
 
     <!-- Zero Results Warning Message Module Container -->
@@ -67,7 +63,6 @@
 
     <!-- 🔗 LINK ADDITION: Points to individual details pages + contains explicit publication dates -->
     <div id="resourceRegistry">
-      
       <a href="topic-neuroplasticity.html" class="list-item-card" data-search="neuroplasticity adolescents research summary paper ra cn us si-cn-ra-100245 si-us-ra-105991 july 12 2026">
         <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
           <span data-i18n="res_card1_tag">REVIEW PAPER • JULY 12, 2026</span><span>SI-CN-RA-100245 • SI-US-RA-105991</span>
@@ -91,7 +86,6 @@
         <h3 data-i18n="res_card3_title">"Action Potentials Visualized" Video Animation</h3>
         <p data-i18n="res_card3_description">A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
       </a>
-
     </div>
   </main>
 
@@ -109,16 +103,13 @@
       const cards = document.querySelectorAll('.list-item-card');
       const noResultsMessage = document.getElementById('noResultsMessage');
       let visibleCount = 0;
-      
       const queryTokens = query.split(/[\s•\-]+/).filter(token => token.length > 0);
       
       cards.forEach(card => {
         const dataSearchText = (card.getAttribute('data-search') || '').toLowerCase();
         const primaryHeadingText = card.querySelector('h3').textContent.toLowerCase();
         const totalCardContentText = `${dataSearchText} ${primaryHeadingText} ${card.textContent.toLowerCase()}`;
-        
         const isMatch = queryTokens.every(token => totalCardContentText.includes(token));
-        
         if (isMatch) {
           card.style.display = 'block';
           visibleCount++;
