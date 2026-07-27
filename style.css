@@ -392,10 +392,10 @@ footer {
 }
 
 /* ==========================================================================
-   Ultra-High-Visibility 3D Cinematic Cascade Reveal
+   High-Impact Cinematic Cascade Reveal (Fixed 2D Plane)
    ========================================================================== */
 
-/* 1. Theatrical Starting State: Massive 3D drop, tilt back, and scale shrink */
+/* 1. High-Impact Starting State: Massive drop and scale shrink */
 .hero-wrapper h1, 
 .hero-wrapper p, 
 section, 
@@ -404,22 +404,15 @@ section,
 footer, 
 .list-item-card {
   opacity: 0 !important;
-  /* 3D PERSPECTIVE: Drops elements down 150px, shrinks them to 85%, and tilts them back */
-  transform: translate3d(0, 150px, -100px) scale(0.85) rotateX(15deg) !important;
-  /* HIGH IMPACT CURVE: An ultra-aggressive curve that starts violently fast and eases smoothly at the end */
-  transition: opacity 1.6s cubic-bezier(0.075, 0.82, 0.165, 1) !important, 
-              transform 1.6s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  /* MASSIVE 2D PLANE SHIFT: Drops elements down 120px and shrinks them to 80% */
+  transform: translateY(120px) scale(0.8) !important;
+  /* ULTRA-PREMIUM CURVE: Starts fast and eases out elegantly over 1.5 seconds */
+  transition: opacity 1.5s cubic-bezier(0.1, 1, 0.1, 1) !important, 
+              transform 1.5s cubic-bezier(0.1, 1, 0.1, 1) !important;
   will-change: opacity, transform;
-  transform-origin: center bottom;
 }
 
-/* 2. Parent Container Setup: Enables beautiful true 3D spatial depth */
-body, .container, .horizontal-scroll-runway, .editorial-grid {
-  perspective: 1200px;
-  perspective-origin: center center;
-}
-
-/* 3. Active Cinematic State: Snaps elements perfectly flat to the screen */
+/* 2. Active State: Snaps elements perfectly into place at 100% visibility */
 .hero-wrapper h1.is-visible, 
 .hero-wrapper p.is-visible, 
 section.is-visible, 
@@ -428,10 +421,10 @@ section.is-visible,
 footer.is-visible, 
 .list-item-card.is-visible {
   opacity: 1 !important;
-  transform: translate3d(0, 0, 0) scale(1) rotateX(0deg) !important;
+  transform: translateY(0) scale(1) !important;
 }
 
-/* 4. Accessibility Override */
+/* 3. Accessibility Override */
 @media (prefers-reduced-motion: reduce) {
   .hero-wrapper h1, .hero-wrapper p, section, .scroll-item-card, .grid-block, footer, .list-item-card {
     opacity: 1 !important;
@@ -439,4 +432,3 @@ footer.is-visible,
     transition: none !important;
   }
 }
-
