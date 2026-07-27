@@ -394,30 +394,17 @@ footer {
 /* ==========================================================================
    Continuous Viewport Scroll Reveal (Fades Up & Down Permanently)
    ========================================================================== */
-
-/* 1. Base State: Shifted down and hidden by default */
 .reveal-on-scroll {
   opacity: 0 !important;
   transform: translateY(50px) scale(0.97);
-  /* SLOWER TRANSITION: Increased to 1.6 seconds for a smooth, graceful sweep */
   transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important, 
               transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
 
-/* 2. Active State: Smoothly brought to 100% visible visibility */
 .reveal-on-scroll.is-visible {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
-}
-
-/* 3. Accessibility Override */
-@media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
 }
 
 
