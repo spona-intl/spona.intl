@@ -392,10 +392,10 @@ footer {
 }
 
 /* ==========================================================================
-   High-Impact Cinematic Cascade Reveal (Fixed 2D Plane)
+   High-Impact 2D Scale & Lift Reveal (Zero 3D)
    ========================================================================== */
 
-/* 1. High-Impact Starting State: Massive drop and scale shrink */
+/* 1. Initial State: Flat 2D displacement and safe opacity initialization */
 .hero-wrapper h1, 
 .hero-wrapper p, 
 section, 
@@ -404,15 +404,15 @@ section,
 footer, 
 .list-item-card {
   opacity: 0 !important;
-  /* MASSIVE 2D PLANE SHIFT: Drops elements down 120px and shrinks them to 80% */
-  transform: translateY(120px) scale(0.8) !important;
-  /* ULTRA-PREMIUM CURVE: Starts fast and eases out elegantly over 1.5 seconds */
-  transition: opacity 1.5s cubic-bezier(0.1, 1, 0.1, 1) !important, 
-              transform 1.5s cubic-bezier(0.1, 1, 0.1, 1) !important;
+  /* PURE 2D: Drops elements down 80px and shrinks them to 90% size */
+  transform: translateY(80px) scale(0.9) !important;
+  /* SMOOTH SWEEP: Crisp, high-velocity transition timing */
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important, 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
 
-/* 2. Active State: Snaps elements perfectly into place at 100% visibility */
+/* 2. Active State: Snaps elements perfectly flat onto your standard page layout */
 .hero-wrapper h1.is-visible, 
 .hero-wrapper p.is-visible, 
 section.is-visible, 
