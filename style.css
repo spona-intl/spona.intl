@@ -1,14 +1,15 @@
 :root {
-  --bg-main: #fcfcfd;
-  --bg-card: #ffffff;
-  --border-subtle: #e2e8f0;
-  --text-display: #0f172a;
-  --text-muted: #64748b;
-  --brand-dark: #1e293b;
-  --brand-accent-bg: #f8fafc;
-  --brand-accent-text: #334155;
-  --brand-accent-border: #cbd5e1;
+  --bg-main: #090d16;            /* Matte Obsidian Black */
+  --bg-card: #111827;            /* Deep Cyber Gray */
+  --border-subtle: #1f2937;      /* Clean Tech Border */
+  --text-display: #f9fafb;       /* Stark Crisp White */
+  --text-muted: #9ca3af;         /* Soft Scientific Slate */
+  --brand-dark: #38bdf8;         /* Synapse Cyan Accent */
+  --brand-accent-bg: #1e1b4b;    /* Academic Deep Indigo */
+  --brand-accent-text: #38bdf8;  /* Cyan Highlights */
+  --brand-accent-border: #38bdf8;/* Focus Frame Accents */
 }
+
 
 * {
   box-sizing: border-box;
@@ -28,10 +29,10 @@ body {
 
 /* NEW ADDITION: Top Horizontal Moving Announcement Banner */
 .top-announcement-banner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+  background: linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #111827 100%) !important;
   background-size: 100% 100%;
-  color: #f8fafc !important;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  color: var(--brand-dark) !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
   overflow: hidden;
   padding: 12px 0;
   font-size: 0.82rem;
@@ -42,6 +43,7 @@ body {
   width: 100%;
   z-index: 1001;
 }
+
 
 .banner-track {
   display: inline-block;
@@ -67,16 +69,16 @@ body {
 /* ==========================================================================
    Navigation Header Structure (Universal Smooth Scroll Layout)
    ========================================================================== */
-nav { 
-  position: sticky; 
-  top: 0; 
-  background-color: rgba(252, 252, 253, 0.95); 
-  border-bottom: 1px solid var(--border-subtle); 
-  padding: 16px 20px; 
-  z-index: 1000; 
-  backdrop-filter: blur(20px); 
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(9, 13, 22, 0.85);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 16px 20px;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-} 
+}
 
 .nav-container { 
   max-width: 1200px; 
@@ -88,15 +90,16 @@ nav {
 } 
 
 /* Logo branding layout element placement styles */
-.nav-logo { 
-  font-family: "Times New Roman", Georgia, serif; 
-  font-weight: 800; 
-  font-size: 1.6rem; 
-  color: #000000; 
-  text-decoration: none; 
-  letter-spacing: 0.5px; 
+.nav-logo {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
   flex-shrink: 0; /* Keeps logo from crushing down on tiny screens */
-} 
+}
+
 
 .nav-logo span { 
   color: var(--brand-dark); 
@@ -157,10 +160,10 @@ nav {
   transition: all 0.2s ease-in-out; 
 } 
 
-.nav-links a:hover { 
-  color: #0f172a; 
-  background-color: #f8fafc; 
-} 
+.nav-links a:hover {
+  color: var(--text-display);
+  background-color: rgba(255, 255, 255, 0.05);
+}
 
 .nav-links a.active,
 .nav-links a:active { 
@@ -198,9 +201,9 @@ nav {
 }
 
 .hero-wrapper h1 {
-  font-family: "Times New Roman", Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 3.5rem;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.2;
   color: var(--text-display);
   max-width: 900px;
@@ -240,10 +243,10 @@ nav {
 
 .action-btn {
   display: inline-block;
-  background-color: var(--text-display);
-  color: #ffffff;
+  background-color: var(--brand-dark);
+  color: #090d16;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   padding: 14px 32px;
   border-radius: 4px;
@@ -251,8 +254,9 @@ nav {
 }
 
 .action-btn:hover {
-  background-color: #334155;
+  background-color: #7dd3fc;
 }
+
 
 /* Horizontal Scrolling Display Grid */
 .publication-runway-section {
@@ -269,9 +273,9 @@ nav {
 }
 
 .section-meta-header h2 {
-  font-family: "Times New Roman", Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .scroll-indicator-text {
@@ -314,7 +318,14 @@ nav {
 
 .scroll-item-card:hover {
   transform: translateY(-4px); /* Moves up subtly on hover instead of snapping down */
-  border-color: var(--text-display);
+  border-color: var(--brand-dark);
+}
+
+.scroll-item-card h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 16px 0 8px 0;
 }
 
 .scroll-item-card h3 {
@@ -336,7 +347,7 @@ nav {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--brand-dark);
 }
 
 .card-contributor-footer {
@@ -362,9 +373,9 @@ nav {
 }
 
 .grid-block h3 {
-  font-family: "Times New Roman", Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
@@ -400,14 +411,14 @@ nav {
 }
 
 .list-item-card:hover {
-  border-color: var(--text-display);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  border-color: var(--brand-dark);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .list-item-card h3 {
-  font-family: "Times New Roman", Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--text-display);
   margin-bottom: 8px;
 }
@@ -440,17 +451,15 @@ footer {
     opacity: 0.3;
     transform: translateY(60px) scale(0.95);
   }
-  
   /* Elements lock into sharp focus across the middle 30% of the screen viewport */
   35%, 65% {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-  
   100% {
-    /* HIGH VISIBILITY CHANGE: Fades cleanly down to 30% opacity as it rolls out the top */
-    opacity: 0.3;
-    transform: translateY(-60px) scale(0.95);
+    /* FIXED: Prevent content from looking missing at exit boundaries */
+    opacity: 0.8;
+    transform: translateY(-20px) scale(1);
   }
 }
 
@@ -517,7 +526,7 @@ footer {
 }
 
 .lang-switcher-wrapper:hover {
-  background-color: #f8fafc; /* Subtle pill background appearance on hover */
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle pill background appearance on hover */
 }
 
 /* Styles your custom SVG globe graphic */
@@ -543,9 +552,13 @@ footer {
   font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
-  padding-right: 14px; /* Space for tiny native arrow if supported or needed */
+  padding-right: 14px; 
+  
+  /* Space for tiny native arrow if supported or needed */
   outline: none;
-  appearance: none; /* Crucial override to drop old layout styles */
+  appearance: none; 
+  
+  /* Crucial override to drop old layout styles */
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: color 0.2s ease-in-out;
@@ -602,12 +615,12 @@ footer {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   width: 160px;
   padding: 6px 0;
   display: flex;
   flex-direction: column;
-  z-index: 2000;
+  z-index: 2000; 
   
   /* Hidden default states ready for interaction triggers */
   opacity: 0;
@@ -615,6 +628,7 @@ footer {
   pointer-events: none;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
 }
+
 
 /* Toggle modifier class managed seamlessly by JavaScript actions */
 .lang-dropdown-menu.is-open {
@@ -639,13 +653,13 @@ footer {
 }
 
 .lang-menu-item:hover {
-  background-color: #f8fafc;
+  background-color: rgba(255, 255, 255, 0.05);
   color: var(--text-display);
 }
 
 /* Dynamic highlighted active selected item layout state */
 .lang-menu-item.active {
-  color: var(--text-display);
+  color: var(--brand-dark);
   background-color: var(--brand-accent-bg);
   font-weight: 600;
 }
@@ -662,35 +676,38 @@ body, main, .container {
 .search-bar {
   /* DEFAULT DESKTOP CONFIGURATION: Sticks right below desktop navbar folder */
   position: sticky !important;
-  top: 73px !important; 
-  z-index: 990 !important; /* Layers safely above moving resource list cards */
+  top: 73px !important;
+  z-index: 990 !important; 
   
+  /* Layers safely above moving resource list cards */
   display: block;
   width: 100%;
   padding: 16px 20px;
   font-size: 1rem;
+  color: var(--text-display);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
   outline: none;
-  margin-bottom: 40px !important;
+  margin-bottom: 40px !important; 
   
   /* Forces search field to ignore background scroll-timeline fading actions */
-  opacity: 1 !important; 
+  opacity: 1 !important;
   animation: none !important;
   will-change: transform;
   
   /* Frosted glass backdrop overlay backing */
-  background-color: rgba(252, 252, 253, 0.98) !important;
+  background-color: rgba(17, 24, 39, 0.85) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .search-bar:focus {
-  border-color: var(--text-display);
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  border-color: var(--brand-dark);
+  box-shadow: 0 0 0 1px var(--brand-dark);
 }
+
 
 /* FIX FOR MOBILE: Adjusts the sticky trigger point to match the smaller mobile navbar height */
 @media (max-width: 640px) {
