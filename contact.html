@@ -8,18 +8,45 @@
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+    
+    <div style="display: flex; align-items: center; gap: 16px; position: relative;">
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+        <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
+        <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <!-- Smooth Small Icon Picker Trigger Block -->
+      <div class="custom-lang-container">
+        <button id="langMenuBtn" class="lang-icon-btn" aria-label="Switch Language">
+          <!-- Smaller, Thinner Vector Globe Icon -->
+          <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </button>
+
+        <!-- Elegant Floating Pop-up Selection List Menu Box -->
+        <div id="langDropMenu" class="lang-dropdown-menu">
+          <button data-lang-val="en" class="lang-menu-item active">English (EN)</button>
+          <button data-lang-val="zh-TW" class="lang-menu-item">繁體中文 (ZH)</button>
+          <button data-lang-val="hi" class="lang-menu-item">हिन्दी (HI)</button>
+          <button data-lang-val="es" class="lang-menu-item">Español (ES)</button>
+          <button data-lang-val="fr" class="lang-menu-item">Français (FR)</button>
+          <button data-lang-val="ru" class="lang-menu-item">Русский (RU)</button>
+          <button data-lang-val="fil" class="lang-menu-item">Filipino (FIL)</button>
         </div>
-    </nav>
+      </div>
+    </div>
+
+  </div>
+</nav>
 
     <main class="container" style="max-width: 650px; text-align: center;">
         <div class="hero-wrapper">
