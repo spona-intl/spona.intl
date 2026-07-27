@@ -83,32 +83,54 @@ document.addEventListener("DOMContentLoaded", () => {
   setLanguage(defaultLang);
 
   // ==========================================================================
-  // FEATURE 3: UNBOUNDED DUAL-DIRECTION TRANSITION REVEAL ENGINE (FIXED)
+  // FEATURE 3: REAL-TIME SYMMETRIC PERIPHERAL FOCUS ENGINE
   // ==========================================================================
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Toggles class instantly on entry/exit bounding overlaps
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      } else {
-        entry.target.classList.remove("is-visible");
-      }
-    });
-  }, {
-    root: null, 
-    // FIX: Using completely clear bounds (0px) ensures that long content pages 
-    // cleanly trigger element removal triggers the moment an element slips off either screen pole
-    rootMargin: "0px 0px -40px 0px", 
-    threshold: 0.02 // Tiny threshold prevents frames from getting trapped under fast momentum scrolling
-  });
-
-  // FIX: Broad query matching profile selects every component across Home, About, and Resources
   const targetElements = document.querySelectorAll(
     ".hero-wrapper h1, .hero-wrapper p, .status-pill, section, .editorial-card, .scroll-item-card, .grid-block, .list-item-card, .search-bar, footer"
   );
-  
-  targetElements.forEach(element => {
-    element.classList.add("reveal-on-scroll");
-    scrollObserver.observe(element);
-  });
+
+  // Apply the baseline transition tracking class layout rules immediately
+  targetElements.forEach(el => el.classList.add("reveal-on-scroll"));
+
+  function updatePeripheralFocus() {
+    const viewportCenter = window.innerHeight / 2;
+
+    targetElements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const elementCenter = rect.top + (rect.height / 2);
+
+      // Verify if the component is physically visible inside the browser window bounds
+      if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+        // Calculate how far away the element center is from the screen center fold line
+        const distanceToCenter = Math.abs(viewportCenter - elementCenter);
+        
+        // Define a safe activation viewport field depth boundary zone (e.g., 250 pixels)
+        const maxDistanceRange = window.innerHeight * 0.45;
+
+        // Calculate a linear percentage scale ratio ranging between 0 (centered) and 1 (far away)
+        const distanceRatio = Math.min(distanceToCenter / maxDistanceRange, 1);
+
+        // Map the calculation directly to scale between 1.0 (100% focused) and 0.6 (60% peripheral opacity)
+        const targetOpacity = 1 - (distanceRatio * 0.4);
+        // Map the position scale to shrink slightly from 1 to 0.96 in peripheral view ports
+        const targetScale = 1 - (distanceRatio * 0.04);
+
+        // Apply styles directly to layout inline elements
+        element.style.opacity = targetOpacity;
+        element.style.transform = `scale(${targetScale})`;
+      } else {
+        // Safe baseline reset value for items completely rolled off-screen out of sight
+        element.style.opacity = "0.6";
+        element.style.transform = "scale(0.96)";
+      }
+    });
+  }
+
+  // Bind the calculation framework thread onto passive browser scroll and window resize actions
+  window.addEventListener("scroll", updatePeripheralFocus, { passive: true });
+  window.addEventListener("resize", updatePeripheralFocus, { passive: true });
+
+  // Execute initial calculation sweep instantly upon loading page trees
+  updatePeripheralFocus();
+
 });
