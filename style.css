@@ -28,21 +28,37 @@ body {
 }
 
 /* NEW ADDITION: Top Horizontal Moving Announcement Banner */
-.top-announcement-banner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%) !important;
-  background-size: 100% 100%;
-  color: #ffffff !important;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  padding: 12px 0;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.7px;
-  white-space: nowrap;
-  position: relative;
-  width: 100%;
-  z-index: 1001;
-}
+<a href="https://doi.org" id="dynamicPaperBanner" class="top-announcement-banner" target="_blank" rel="noopener">
+  <!-- Track container holds all slides in a stack -->
+  <div class="banner-slide-container">
+    
+    <!-- Slide 1 (Active by Default) -->
+    <div class="banner-slide active" 
+         data-bg-img="url('physics-paper-preview.jpg')" 
+         data-url="https://doi.org">
+      <span class="banner-text-default">🔥 Feature Paper: Quantum Decoupling Architecture</span>
+      <span class="banner-text-hover">📄 Quantum Decoupling Architecture — By Smith, J. & Doe, A. (Click to Read)</span>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="banner-slide" 
+         data-bg-img="url('biology-paper-preview.jpg')" 
+         data-url="https://doi.org">
+      <span class="banner-text-default">⚡ New Release: Neural Synapse Mapping & Metrics</span>
+      <span class="banner-text-hover">📄 Neural Synapse Mapping — By Lin, Y. & Marcos, R. (Click to Read)</span>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="banner-slide" 
+         data-bg-img="url('chemistry-paper-preview.jpg')" 
+         data-url="https://doi.org">
+      <span class="banner-text-default">📚 Open Access: Catalyst Thermal Synthesis Vectors</span>
+      <span class="banner-text-hover">📄 Catalyst Thermal Synthesis — By Vance, G. & Choi, L. (Click to Read)</span>
+    </div>
+
+  </div>
+</a>
+
 
 
 .banner-track {
