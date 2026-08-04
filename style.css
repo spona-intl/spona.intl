@@ -1,13 +1,13 @@
 :root {
-  --bg-main: #f8fafc;            /* Crisp Laboratory Off-White */
-  --bg-card: #ffffff;            /* Pure White Dynamic Cards */
-  --border-subtle: #e2e8f0;      /* Clean Minimal Component Dividers */
-  --text-display: #0f172a;       /* Deep Slate Navy (High Contrast Header) */
-  --text-muted: #334155;         /* Highly Legible Body Secondary Slate */
-  --brand-dark: #2563eb;         /* High-Voltage Synapse Sapphire Blue */
-  --brand-accent-bg: #eff6ff;    /* Premium Ice Blue Active Highlight Tints */
-  --brand-accent-text: #1d4ed8;  /* Professional Focus Link Indigo */
-  --brand-accent-border: #bfdbfe;/* Soft Structural Outline Accents */
+  --bg-main: #fcfdfe;            /* Warm Alabaster White */
+  --bg-card: #ffffff;            /* Pure Crisp White */
+  --border-subtle: #e2e8f0;      /* Light Slate Splitter */
+  --text-display: #0f1a2c;       /* Deep Institutional Navy */
+  --text-muted: #475569;         /* Dark Slate Gray */
+  --brand-dark: #1e3a8a;         /* Oxford Blue */
+  --brand-accent-bg: #f0f4f8;    /* Soft Architectural Tint */
+  --brand-accent-text: #1d4ed8;  /* Monograph Indigo */
+  --brand-accent-border: #cbd5e1;/* Technical Outline Gray */
 }
 
 
