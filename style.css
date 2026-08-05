@@ -29,35 +29,54 @@ body {
 }
 
 /* NEW ADDITION: Top Horizontal Moving Announcement Banner */
-<a href="https://doi.org" id="dynamicPaperBanner" class="top-announcement-banner" target="_blank" rel="noopener">
-  <div class="banner-slide-container">
-    
-    <!-- Slide 1 -->
-    <div class="banner-slide active" 
-         data-bg-img="url('https://unsplash.com')" 
-         data-url="https://doi.org">
-      <span class="banner-text-default">🔥 Feature Paper: Quantum Decoupling Architecture</span>
-      <span class="banner-text-hover">📄 Quantum Decoupling Architecture — By Smith, J. & Doe, A. (Click to Read)</span>
-    </div>
+/* ADD TO THE VERY BOTTOM OF YOUR STYLE.CSS FILE */
+.top-announcement-banner {
+  display: block !important;
+  visibility: visible !important;
+  width: 100%;
+  position: relative;
+  z-index: 995;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 14px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
 
-    <!-- Slide 2 -->
-    <div class="banner-slide" 
-         data-bg-img="url('https://unsplash.com')" 
-         data-url="https://doi.org">
-      <span class="banner-text-default">⚡ New Release: Neural Synapse Mapping & Metrics</span>
-      <span class="banner-text-hover">📄 Neural Synapse Mapping — By Lin, Y. & Marcos, R. (Click to Read)</span>
-    </div>
+.banner-slide-container {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
 
-    <!-- Slide 3 -->
-    <div class="banner-slide" 
-         data-bg-img="url('https://unsplash.com')" 
-         data-url="https://doi.org">
-      <span class="banner-text-default">📚 Open Access: Catalyst Thermal Synthesis Vectors</span>
-      <span class="banner-text-hover">📄 Catalyst Thermal Synthesis — By Vance, G. & Choi, L. (Click to Read)</span>
-    </div>
+.banner-slide {
+  grid-area: 1 / 1 / 2 / 2 !important;
+  opacity: 0;
+  pointer-events: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 4px 0;
+  transition: opacity 0.6s ease-in-out;
+}
 
-  </div>
-</a>
+.banner-slide.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.banner-text-default { display: inline-block !important; color: #ffffff !important; }
+.banner-text-hover { display: none !important; color: #ffffff !important; }
+
+.top-announcement-banner:hover .banner-text-default { display: none !important; }
+.top-announcement-banner:hover .banner-text-hover { display: inline-block !important; }
 
 
 
