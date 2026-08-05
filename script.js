@@ -86,26 +86,37 @@ document.addEventListener("DOMContentLoaded", () => {
 /* TOP ANNOUNCEMENT BANNER */
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("dynamicPaperBanner");
-  if (!banner) return;
+  const prevBtn = document.getElementById("bannerPrevBtn");
+  const nextBtn = document.getElementById("bannerNextBtn");
+  if (!banner || !prevBtn || !nextBtn) return;
 
   const slides = banner.querySelectorAll(".banner-slide");
   let currentIdx = 0;
   let rotationInterval = null;
 
-  function rotatePaperSlides() {
+  function switchSlide(nextIndex) {
     slides[currentIdx].classList.remove("active");
-    currentIdx = (currentIdx + 1) % slides.length;
-    
-    const nextSlide = slides[currentIdx];
-    nextSlide.classList.add("active");
+    currentIdx = nextIndex;
+    slides[currentIdx].classList.add("active");
 
-    const targetUrl = nextSlide.getAttribute("data-url");
+    const targetUrl = slides[currentIdx].getAttribute("data-url");
     if (targetUrl) banner.setAttribute("href", targetUrl);
   }
 
+  function showNextSlide() {
+    const idx = (currentIdx + 1) % slides.length;
+    switchSlide(idx);
+  }
+
+  function showPrevSlide() {
+    const idx = (currentIdx - 1 + slides.length) % slides.length;
+    switchSlide(idx);
+  }
+
+  // Automatic cycle rotation calibrated directly to 8 seconds (8000ms)
   function startTimer() {
     if (!rotationInterval) {
-      rotationInterval = setInterval(rotatePaperSlides, 4000);
+      rotationInterval = setInterval(showNextSlide, 8000);
     }
   }
 
@@ -114,9 +125,27 @@ document.addEventListener("DOMContentLoaded", () => {
     rotationInterval = null;
   }
 
+  // Intercept events cleanly to override anchor click routing actions
+  prevBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    stopTimer();
+    showPrevSlide();
+    startTimer();
+  });
+
+  nextBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    stopTimer();
+    showNextSlide();
+    startTimer();
+  });
+
   banner.addEventListener("mouseenter", stopTimer);
   banner.addEventListener("mouseleave", startTimer);
 
+  // Bind baseline link state parameters immediately
   if (slides.length > 0) {
     const initialUrl = slides[0].getAttribute("data-url");
     if (initialUrl) banner.setAttribute("href", initialUrl);
