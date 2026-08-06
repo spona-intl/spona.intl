@@ -48,34 +48,46 @@
 </nav>
 
     <!-- TOP ANNOUNCEMENT BANNER -->
+<!-- PLACE DIRECTLY UNDER YOUR </nav> TAG -->
 <a href="https://github.io" id="dynamicPaperBanner" class="top-announcement-banner" target="_blank" rel="noopener">
   <div class="banner-slide-container">
     
-    <!-- Slide 1 (Physics) -->
-    <div class="banner-slide active" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);" data-url="https://doi.org">
-      <span class="banner-text-default">🔥 Feature Paper: Quantum Decoupling Architecture</span>
-      <span class="banner-text-hover">📄 Quantum Decoupling Architecture — By Smith, J. & Doe, A. (Click to Read)</span>
+    <!-- Slide 1 (Physics / Materials) -->
+    <div class="banner-slide active" 
+         style="background-image: url('https://mdpi-res.com');" 
+         data-url="https://doi.org">
+      <div class="banner-text-wrapper">
+        <span class="banner-text-default">🔥 Feature Paper: Quantum Decoupling Architecture</span>
+        <span class="banner-text-hover">📄 Quantum Decoupling Architecture — By Smith, J. & Doe, A. (Click to Read Paper)</span>
+      </div>
     </div>
 
-    <!-- Slide 2 (Biology) -->
-    <div class="banner-slide" style="background: linear-gradient(135deg, #062c1c 0%, #064e3b 100%);" data-url="https://doi.org">
-      <span class="banner-text-default">⚡ New Release: Neural Synapse Mapping & Metrics</span>
-      <span class="banner-text-hover">📄 Neural Synapse Mapping — By Lin, Y. & Marcos, R. (Click to Read)</span>
+    <!-- Slide 2 (Neuroscience / Synapse) -->
+    <div class="banner-slide" 
+         style="background-image: url('https://cell.com');" 
+         data-url="https://doi.org">
+      <div class="banner-text-wrapper">
+        <span class="banner-text-default">⚡ New Release: Neural Synapse Mapping & Metrics</span>
+        <span class="banner-text-hover">📄 Neural Synapse Mapping — By Lin, Y. & Marcos, R. (Click to Read Paper)</span>
+      </div>
     </div>
 
-    <!-- Slide 3 (Chemistry) -->
-    <div class="banner-slide" style="background: linear-gradient(135deg, #2c1214 0%, #7f1d1d 100%);" data-url="https://doi.org">
-      <span class="banner-text-default">📚 Open Access: Catalyst Thermal Synthesis Vectors</span>
-      <span class="banner-text-hover">📄 Catalyst Thermal Synthesis — By Vance, G. & Choi, L. (Click to Read)</span>
+    <!-- Slide 3 (Chemistry / Molecular) -->
+    <div class="banner-slide" 
+         style="background-image: url('https://mdpi.com');" 
+         data-url="https://doi.org">
+      <div class="banner-text-wrapper">
+        <span class="banner-text-default">📚 Open Access: Catalyst Thermal Synthesis Vectors</span>
+        <span class="banner-text-hover">📄 Catalyst Thermal Synthesis — By Vance, G. & Choi, L. (Click to Read Paper)</span>
+      </div>
     </div>
 
   </div>
 
-  <!-- Unified Navigation Interface Overlay Controls -->
+  <!-- Clickable Left & Right Navigation Arrows -->
   <button type="button" class="banner-nav-btn prev-btn" id="bannerPrevBtn" aria-label="Previous slide">&#10094;</button>
   <button type="button" class="banner-nav-btn next-btn" id="bannerNextBtn" aria-label="Next slide">&#10095;</button>
 </a>
-
 
 
   <main class="container">
