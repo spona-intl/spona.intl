@@ -113,10 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
     switchSlide(idx);
   }
 
-  // Automatic cycle rotation calibrated directly to 8 seconds (8000ms)
   function startTimer() {
     if (!rotationInterval) {
-      rotationInterval = setInterval(showNextSlide, 8000);
+      rotationInterval = setInterval(showNextSlide, 8000); /* 8-second slow academic timer */
     }
   }
 
@@ -125,31 +124,22 @@ document.addEventListener("DOMContentLoaded", () => {
     rotationInterval = null;
   }
 
-  // Intercept events cleanly to override anchor click routing actions
   prevBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    stopTimer();
-    showPrevSlide();
-    startTimer();
+    e.preventDefault(); e.stopPropagation();
+    stopTimer(); showPrevSlide(); startTimer();
   });
 
   nextBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    stopTimer();
-    showNextSlide();
-    startTimer();
+    e.preventDefault(); e.stopPropagation();
+    stopTimer(); showNextSlide(); startTimer();
   });
 
   banner.addEventListener("mouseenter", stopTimer);
   banner.addEventListener("mouseleave", startTimer);
 
-  // Bind baseline link state parameters immediately
   if (slides.length > 0) {
     const initialUrl = slides[0].getAttribute("data-url");
     if (initialUrl) banner.setAttribute("href", initialUrl);
   }
-  
   startTimer();
 });
