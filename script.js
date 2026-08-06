@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startTimer() {
     if (!rotationInterval) {
-      rotationInterval = setInterval(showNextSlide, 8000); /* 8-second slow academic timer */
+      rotationInterval = setInterval(showNextSlide, 8000); 
     }
   }
 
