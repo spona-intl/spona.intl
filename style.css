@@ -33,27 +33,23 @@ body {
   display: block !important;
   visibility: visible !important;
   width: 100%;
+  height: 380px !important; /* Expanded drastically to fit half an academic page view */
   position: relative;
   z-index: 995;
   text-decoration: none;
   overflow: hidden;
-  padding: 24px 0 !important; /* SIGNIFICANTLY HIGHER: Made the banner much taller */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1.05rem !important; /* ENLARGED: Immediate readability boost */
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -2px 10px rgba(0, 0, 0, 0.15);
+  background-color: #0f172a;
 }
 
 .banner-slide-container {
   display: grid !important;
   grid-template-columns: 1fr !important;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   width: 100%;
+  height: 100%;
 }
 
+/* 2. Slide Element Handling Real Paper Background Graphics */
 .banner-slide {
   grid-area: 1 / 1 / 2 / 2 !important;
   opacity: 0;
@@ -62,60 +58,126 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4px 0;
-  transition: opacity 0.6s ease-in-out;
+  height: 100%;
+  background-size: contain; /* Shows full layout fidelity of the paper sheets */
+  background-repeat: no-repeat;
+  background-position: center top; /* Anchors the top margin headers of the papers */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Adds a dark overlay curtain that softens out on hover to reveal the text papers underneath */
+.banner-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.85); /* High-contrast reading overlay */
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
 }
 
 .banner-slide.active {
   opacity: 1 !important;
   pointer-events: auto !important;
+  position: relative;
 }
 
-.banner-text-default { display: inline-block !important; color: #ffffff !important; }
-.banner-text-hover { display: none !important; color: #ffffff !important; }
+/* 3. Smooth Text Overlapping Mechanics */
+.banner-text-wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.25rem !important; /* Increased for prominent citation presentation */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
 
-.top-announcement-banner:hover .banner-text-default { display: none !important; }
-.top-announcement-banner:hover .banner-text-hover { display: inline-block !important; }
+.banner-text-default, 
+.banner-text-hover {
+  color: #ffffff !important;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-in-out;
+}
 
-/* Clickable control configurations mapped to container edges */
+/* Hide the hover credit layout by default */
+.banner-text-hover {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 40px;
+  opacity: 0;
+  transform: translateY(15px); /* Slide down preparation offset */
+}
+
+/* 4. The Smooth Hover Automation Transitions */
+.top-announcement-banner:hover .banner-slide::before {
+  background: rgba(15, 23, 42, 0.55); /* Lightens up to clearly expose the research paper background */
+}
+
+.top-announcement-banner:hover .banner-text-default {
+  opacity: 0;
+  transform: translateY(-15px); /* Glides upward smoothly */
+}
+
+.top-announcement-banner:hover .banner-text-hover {
+  opacity: 1;
+  transform: translateY(0); /* Fades and transitions perfectly into position */
+}
+
+/* 5. Floating Navigation Controller Buttons */
 .banner-nav-btn {
   position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  background: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(15, 23, 42, 0.6) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  padding: 10px 18px !important;
-  font-size: 1.1rem !important;
-  font-weight: bold !important;
+  padding: 14px 20px !important;
+  font-size: 1.3rem !important;
   cursor: pointer !important;
-  border-radius: 6px !important;
+  border-radius: 50% !important; /* Clean circular look */
   z-index: 1005 !important;
+  backdrop-filter: blur(4px);
   transition: all 0.2s ease-in-out !important;
 }
 
 .banner-nav-btn:hover {
-  background: rgba(255, 255, 255, 0.3) !important;
-  transform: translateY(-50%) scale(1.05) !important;
+  background: rgba(37, 99, 235, 0.9) !important; /* Highlight fill uses your signature brand blue */
+  border-color: transparent !important;
 }
 
-.prev-btn { left: 32px !important; }
-.next-btn { right: 32px !important; }
+.prev-btn { left: 40px !important; }
+.next-btn { right: 40px !important; }
 
-/* Responsive adjustments for narrow viewport screens */
+/* Desktop Adjustment for Sticky Search Components */
+.search-bar {
+  top: 473px !important; /* Re-adjusted dynamically (Nav 73px + Banner 380px + margin padding) */
+}
+
+/* Responsive Scaling for Small Mobile Form Factors */
 @media (max-width: 640px) {
   .top-announcement-banner {
-    padding: 16px 0 !important;
-    font-size: 0.88rem !important;
+    height: 240px !important; /* Slightly shorter on cell phones */
+  }
+  .banner-text-wrapper {
+    font-size: 0.95rem !important;
   }
   .banner-nav-btn {
-    padding: 6px 12px !important;
-    font-size: 0.9rem !important;
+    padding: 8px 14px !important;
+    font-size: 1rem !important;
   }
-  .prev-btn { left: 10px !important; }
-  .next-btn { right: 10px !important; }
+  .prev-btn { left: 12px !important; }
+  .next-btn { right: 12px !important; }
+  .search-bar { top: 317px !important; }
 }
-
 
 /* NEW ADDITION: Infinite Scroll Animation Keyframes */
 @keyframes scroll-banner {
